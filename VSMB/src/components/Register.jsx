@@ -27,10 +27,6 @@ export default function Register() {
 
       {/* ===== Footer ===== */}
       <footer className="footer">
-        <p>
-          Página desarrollada en la Escuela Técnica N°26 “Confederación Suiza”<br />
-          Integrantes: Bruno Rojas - Shandee Incapiño - Marcos Ortiz - Morales Víctor
-        </p>
       </footer>
     </div>
   );
