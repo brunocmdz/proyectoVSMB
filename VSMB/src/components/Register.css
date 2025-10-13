@@ -1,4 +1,4 @@
-/* ===== RESET GENERAL ===== */
+
 * {
   margin: 0;
   padding: 0;
@@ -6,14 +6,14 @@
   font-family: 'Inter', sans-serif;
 }
 
-/* ===== BODY ===== */
+
 body {
   background-color: #0b0b0b;
   color: #ffffff;
   min-height: 100vh;
 }
 
-/* ===== CONTENEDOR PRINCIPAL ===== */
+
 .register-container {
   display: flex;
   flex-direction: column;
@@ -30,7 +30,7 @@ body {
   font-weight: 600;
 }
 
-/* ===== FORMULARIO ===== */
+
 .form-box {
   width: 460px;
   display: flex;
@@ -47,7 +47,7 @@ body {
   flex: 1;
 }
 
-/* ===== INPUTS ===== */
+
 .form-box input {
   background: transparent;
   border: 1px solid #333;
@@ -63,7 +63,7 @@ body {
   outline: none;
 }
 
-/* ===== BOTÓN ===== */
+
 .form-box button {
   margin-top: 10px;
   padding: 12px;
@@ -82,7 +82,7 @@ body {
   color: #0b0b0b;
 }
 
-/* ===== TEXTO LEGAL ===== */
+
 .form-terms {
   font-size: 11px;
   color: #aaa;
@@ -94,7 +94,7 @@ body {
   text-decoration: none;
 }
 
-/* ===== FOOTER ===== */
+
 .footer {
   background-color: #121212;
   color: #fff;
@@ -107,7 +107,7 @@ body {
   line-height: 1.6;
 }
 
-/* ===== RESPONSIVE ===== */
+
 @media (max-width: 768px) {
   .form-box {
     width: 90%;
