@@ -5,7 +5,7 @@ export default function Register() {
     <div>
       {/* ===== Formulario ===== */}
       <div className="register-container">
-        <h2>¡Regístrese para poder empezar a jugar ahora!</h2>
+        <h2>¡Regístrese para poder ingresar ahora!</h2>
 
         <form className="form-box">
           <div className="form-row">
