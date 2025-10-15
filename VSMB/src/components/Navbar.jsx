@@ -1,11 +1,11 @@
 import './navbar.css';
 
-function Navbar({ onRegisterClick,onLoginClick }) { 
+function Navbar({ onRegisterClick,onLoginClick,onHomeClick }) { 
   return (
     <div className="container">
       <nav className='navbar'>
         <div className="brand-logo">
-          <a href="#" className="menu-item">V S M B</a>
+          <a onClick={onHomeClick} className="menu-item">V S M B</a>
         </div>
         <div className='auth-buttons'>
           <div id='login_btns'>

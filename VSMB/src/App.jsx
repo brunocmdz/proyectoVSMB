@@ -20,7 +20,7 @@ function App() {
 
   return (
     <div className="layout">
-      <Navbar onRegisterClick={() => setView('register')} onLoginClick={() => setView('login')} />
+      <Navbar onRegisterClick={() => setView('register')} onLoginClick={() => setView('login')} onHomeClick={() => setView('home')}/>
       <main className="content">
         {content}
       </main>

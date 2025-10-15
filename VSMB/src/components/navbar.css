@@ -20,6 +20,7 @@
     font-weight: bold;
     font-style: normal;
     margin-left: 40px;
+    cursor: pointer;
   }
 
   .auth-buttons #login,
