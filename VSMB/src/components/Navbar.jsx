@@ -1,6 +1,6 @@
 import './navbar.css';
 
-function Navbar() {
+function Navbar({ onRegisterClick,onLoginClick }) { 
   return (
     <div className="container">
       <nav className='navbar'>
@@ -9,12 +9,13 @@ function Navbar() {
         </div>
         <div className='auth-buttons'>
           <div id='login_btns'>
-            <button href='#' className='menu-item' id='login'>Iniciar Sesión</button>
-            <button href='#' className='menu-item' id='register'>Registrarse</button>
+            <button className='menu-item' onClick={onLoginClick} id='login'>Iniciar Sesión</button>
+            <button className='menu-item' onClick={onRegisterClick} id='register'>Registrarse</button>
           </div>
         </div>
       </nav>
     </div>
-  )}
+  );
+}
 
-export default Navbar;  
+export default Navbar;
