@@ -29,7 +29,7 @@ export default function Register() {
           </div>
           <input type="email" placeholder="Correo Electrónico" onChange={(event) => setEmail(event.target.value)}/>
           <input type="password" placeholder="Contraseña" onChange={(event) => setPassword(event.target.value)}/>
-          <button onClick={register} type="submit">Siguiente</button>
+          <button onClick={register} type="button">Siguiente</button>
           <p className="form-terms">
             Creando una cuenta, acepta nuestra{' '}
             <a href="#">política de privacidad</a> y{' '}
