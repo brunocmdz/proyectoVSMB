@@ -1,0 +1,10 @@
+C:\Users\Victor\source\proyecto\Comparador de texto\beta\bin\Debug\beta.exe.config
+C:\Users\Victor\source\proyecto\Comparador de texto\beta\bin\Debug\beta.exe
+C:\Users\Victor\source\proyecto\Comparador de texto\beta\bin\Debug\beta.pdb
+C:\Users\Victor\source\proyecto\Comparador de texto\beta\obj\Debug\beta.csproj.AssemblyReference.cache
+C:\Users\Victor\source\proyecto\Comparador de texto\beta\obj\Debug\beta.Form1.resources
+C:\Users\Victor\source\proyecto\Comparador de texto\beta\obj\Debug\beta.Properties.Resources.resources
+C:\Users\Victor\source\proyecto\Comparador de texto\beta\obj\Debug\beta.csproj.GenerateResource.cache
+C:\Users\Victor\source\proyecto\Comparador de texto\beta\obj\Debug\beta.csproj.CoreCompileInputs.cache
+C:\Users\Victor\source\proyecto\Comparador de texto\beta\obj\Debug\beta.exe
+C:\Users\Victor\source\proyecto\Comparador de texto\beta\obj\Debug\beta.pdb
