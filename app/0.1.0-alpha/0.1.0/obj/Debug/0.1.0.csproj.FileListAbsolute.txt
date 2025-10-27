@@ -1,0 +1,10 @@
+C:\Users\Victor\source\proyecto\beta 1.1\1.1\bin\Debug\1.1.exe.config
+C:\Users\Victor\source\proyecto\beta 1.1\1.1\bin\Debug\1.1.exe
+C:\Users\Victor\source\proyecto\beta 1.1\1.1\bin\Debug\1.1.pdb
+C:\Users\Victor\source\proyecto\beta 1.1\1.1\obj\Debug\1.1.csproj.AssemblyReference.cache
+C:\Users\Victor\source\proyecto\beta 1.1\1.1\obj\Debug\_1._1.Form1.resources
+C:\Users\Victor\source\proyecto\beta 1.1\1.1\obj\Debug\_1._1.Properties.Resources.resources
+C:\Users\Victor\source\proyecto\beta 1.1\1.1\obj\Debug\1.1.csproj.GenerateResource.cache
+C:\Users\Victor\source\proyecto\beta 1.1\1.1\obj\Debug\1.1.csproj.CoreCompileInputs.cache
+C:\Users\Victor\source\proyecto\beta 1.1\1.1\obj\Debug\1.1.exe
+C:\Users\Victor\source\proyecto\beta 1.1\1.1\obj\Debug\1.1.pdb
