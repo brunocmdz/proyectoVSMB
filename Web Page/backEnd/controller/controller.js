@@ -48,7 +48,8 @@ async function login(req, res) {
     res.json({
         id: user.id,
         firstName: user.firstName,
-        lastName: user.lastName
+        lastName: user.lastName,
+        email: user.email
     });
   } catch (err) {
     console.error("Error al obtener los usuarios:", err);

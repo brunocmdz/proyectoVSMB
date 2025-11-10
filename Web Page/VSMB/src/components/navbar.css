@@ -50,3 +50,9 @@
   .auth-buttons {
     margin-right: 40px;
   }
+
+.estado-logeado {
+  font-weight: bold;
+  padding: 8px;
+  cursor: pointer; /* 👈 esto hace que aparezca el puntero */
+}

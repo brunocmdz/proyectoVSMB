@@ -15,6 +15,7 @@ function Login() {
       const { id, firstName, lastName } = response.data;
       localStorage.setItem("userId", id);
       localStorage.setItem("userName", `${firstName} ${lastName}`);
+      localStorage.setItem("userEmail", email);
       console.log("Usuario logueado:", firstName, lastName);    
       window.location.reload();
     } catch (error) {

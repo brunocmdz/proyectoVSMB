@@ -1,15 +1,27 @@
 import './navbar.css';
 import { useEffect, useState } from 'react';
+import UserModal from './UserModal'; // 👈 importá el modal
 
 function Navbar({ onRegisterClick, onLoginClick, onHomeClick }) {
   const [userName, setUserName] = useState('');
+  const [userId, setUserId] = useState('');
+  const [userEmail, setUserEmail] = useState('');
+  const [mostrarModal, setMostrarModal] = useState(false);
 
   useEffect(() => {
     const name = localStorage.getItem("userName");
-    if (name) {
-      setUserName(name);
-    }
+    const id = localStorage.getItem("userId");
+    const email = localStorage.getItem("userEmail");
+    if (name) setUserName(name);
+    if (id) setUserId(id);
+    if (email) setUserEmail(email);
   }, []);
+
+  const cerrarSesion = () => {
+    localStorage.removeItem("userId");
+    localStorage.removeItem("userName");
+    window.location.reload();
+  };
 
   return (
     <div className="container">
@@ -20,7 +32,9 @@ function Navbar({ onRegisterClick, onLoginClick, onHomeClick }) {
         <div className='auth-buttons'>
           <div id='login_btns'>
             {userName ? (
-              <span className="estado-logeado">Hola, {userName}</span>
+              <span className="estado-logeado" onClick={() => setMostrarModal(true)}>
+                 Hola, {userName}
+              </span>
             ) : (
               <>
                 <button className='menu-item' onClick={onLoginClick} id='login'>Iniciar Sesión</button>
@@ -30,6 +44,16 @@ function Navbar({ onRegisterClick, onLoginClick, onHomeClick }) {
           </div>
         </div>
       </nav>
+
+      {mostrarModal && (
+        <UserModal
+          userName={userName}
+          userId={userId}
+          userEmail={userEmail}
+          onClose={() => setMostrarModal(false)}
+          onLogout={cerrarSesion}
+        />
+      )}
     </div>
   );
 }
