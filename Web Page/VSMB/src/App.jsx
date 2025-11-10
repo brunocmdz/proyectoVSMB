@@ -1,17 +1,23 @@
 import Navbar from './components/Navbar';
-import Footer from './components/Footer'
-import Home from './components/Home';
+import Footer from './components/Footer';
+import HomePublic from './components/HomePublic';
+import HomePrivate from './components/HomePrivate';
 import Login from './components/Login';
 import Register from './components/Register';
-import { useState } from 'react';
-
+import { useState, useEffect } from 'react';
 
 function App() {
-  const [view, setView] = useState('home'); 
+  const [view, setView] = useState('home');
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+
+  useEffect(() => {
+    const userId = localStorage.getItem("userId");
+    setIsLoggedIn(!!userId);
+  }, []);
 
   let content;
   if (view === 'home') {
-    content = <Home />;
+    content = isLoggedIn ? <HomePrivate /> : <HomePublic />;
   } else if (view === 'register') {
     content = <Register />;
   } else if (view === 'login') {
@@ -20,7 +26,11 @@ function App() {
 
   return (
     <div className="layout">
-      <Navbar onRegisterClick={() => setView('register')} onLoginClick={() => setView('login')} onHomeClick={() => setView('home')}/>
+      <Navbar
+        onRegisterClick={() => setView('register')}
+        onLoginClick={() => setView('login')}
+        onHomeClick={() => setView('home')}
+      />
       <main className="content">
         {content}
       </main>
@@ -30,4 +40,3 @@ function App() {
 }
 
 export default App;
-

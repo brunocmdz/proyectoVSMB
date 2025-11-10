@@ -1,6 +1,6 @@
 import './home.css';
 import img from '../assets/imagenmuimportante.png'
-function Home() {
+function HomePublic({ onRegisterClick}) {
   return (
     <div className="container">
         <div class="card1">
@@ -31,10 +31,10 @@ function Home() {
                 podrás ahorrar tiempo y evitar errores al comparar versiones.
             </p>
             </div>
-            <button> Descargar </button>
+            <button onClick={onRegisterClick}> Descargar </button>
         </div>
         </div>
     </div>
   )}
 
-export default Home;  
+export default HomePublic;  
