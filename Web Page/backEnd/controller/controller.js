@@ -45,7 +45,11 @@ async function login(req, res) {
       return res.status(401).json({ message: "Credenciales inválidas" });
     }
 
-    res.json(user.id);
+    res.json({
+        id: user.id,
+        firstName: user.firstName,
+        lastName: user.lastName
+    });
   } catch (err) {
     console.error("Error al obtener los usuarios:", err);
     res.status(500).json({ message: "Error interno del servidor", err });

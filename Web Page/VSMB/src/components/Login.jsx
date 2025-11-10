@@ -1,6 +1,7 @@
 import './Login.css';
 import { useState } from "react";
-import axios from 'axios'
+import axios from 'axios';
+
 function Login() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -8,12 +9,14 @@ function Login() {
   const login = async () => {
     try {
       const response = await axios.post(`http://localhost:3000/users/login/?email=${email}&password=${password}`);
+
       alert("Inicio de sesión exitoso");
 
-      const id  = response.data;
+      const { id, firstName, lastName } = response.data;
       localStorage.setItem("userId", id);
-      console.log("Usuario logueado con id:", id);
-      
+      localStorage.setItem("userName", `${firstName} ${lastName}`);
+      console.log("Usuario logueado:", firstName, lastName);    
+      window.location.reload();
     } catch (error) {
       alert(error.message);
     }
