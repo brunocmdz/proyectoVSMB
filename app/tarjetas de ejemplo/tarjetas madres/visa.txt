@@ -1,0 +1,6 @@
+°°°°tipo°°de°°tarjeta°°:°°visa°°xxxx°°°°
+////num//de//tarjeta//://xxxx//xxxx//xxxx//xxxx////
+----fecha--de--validacion--:--xx--/--xx----
+----fecha--de--vencimiento--:--xx--/--xx----
+<<<<titular>>de<<la>>tarjeta<<:>>xxxx<<xxxx<<<<
+====cvv==:==xxx====

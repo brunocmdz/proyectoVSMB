@@ -8,3 +8,13 @@ C:\Users\Victor\source\proyecto\0.3.0-alpha\0.3.0\obj\Debug\0.3.0.csproj.Generat
 C:\Users\Victor\source\proyecto\0.3.0-alpha\0.3.0\obj\Debug\0.3.0.csproj.CoreCompileInputs.cache
 C:\Users\Victor\source\proyecto\0.3.0-alpha\0.3.0\obj\Debug\0.3.0.exe
 C:\Users\Victor\source\proyecto\0.3.0-alpha\0.3.0\obj\Debug\0.3.0.pdb
+C:\Users\Victor\Documents\proyectoVSMB\App\0.3.0-alpha\0.3.0\bin\Debug\0.3.0.exe.config
+C:\Users\Victor\Documents\proyectoVSMB\App\0.3.0-alpha\0.3.0\bin\Debug\0.3.0.exe
+C:\Users\Victor\Documents\proyectoVSMB\App\0.3.0-alpha\0.3.0\bin\Debug\0.3.0.pdb
+C:\Users\Victor\Documents\proyectoVSMB\App\0.3.0-alpha\0.3.0\obj\Debug\0.3.0.csproj.AssemblyReference.cache
+C:\Users\Victor\Documents\proyectoVSMB\App\0.3.0-alpha\0.3.0\obj\Debug\_0._3._0.Form1.resources
+C:\Users\Victor\Documents\proyectoVSMB\App\0.3.0-alpha\0.3.0\obj\Debug\_0._3._0.Properties.Resources.resources
+C:\Users\Victor\Documents\proyectoVSMB\App\0.3.0-alpha\0.3.0\obj\Debug\0.3.0.csproj.GenerateResource.cache
+C:\Users\Victor\Documents\proyectoVSMB\App\0.3.0-alpha\0.3.0\obj\Debug\0.3.0.csproj.CoreCompileInputs.cache
+C:\Users\Victor\Documents\proyectoVSMB\App\0.3.0-alpha\0.3.0\obj\Debug\0.3.0.exe
+C:\Users\Victor\Documents\proyectoVSMB\App\0.3.0-alpha\0.3.0\obj\Debug\0.3.0.pdb

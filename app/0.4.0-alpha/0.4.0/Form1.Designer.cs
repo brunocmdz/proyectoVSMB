@@ -1,4 +1,4 @@
-﻿namespace _0._3._0
+﻿namespace _0._4._0
 {
     partial class Form1
     {
@@ -28,6 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.descargarBTN = new System.Windows.Forms.Button();
+            this.labelACR = new System.Windows.Forms.Label();
+            this.compararBTN = new System.Windows.Forms.Button();
+            this.panelACR = new System.Windows.Forms.Panel();
+            this.archivoACR = new System.Windows.Forms.Label();
             this.labelAC = new System.Windows.Forms.Label();
             this.panelAC = new System.Windows.Forms.Panel();
             this.archivosCargadosAC = new System.Windows.Forms.Label();
@@ -46,23 +51,65 @@
             this.archivoCargado = new System.Windows.Forms.Label();
             this.examinarBTNAM = new System.Windows.Forms.Button();
             this.labelArrastrarAM = new System.Windows.Forms.Label();
-            this.panelACR = new System.Windows.Forms.Panel();
-            this.archivoACR = new System.Windows.Forms.Label();
-            this.compararBTN = new System.Windows.Forms.Button();
-            this.labelACR = new System.Windows.Forms.Label();
-            this.descargarBTN = new System.Windows.Forms.Button();
+            this.panelACR.SuspendLayout();
             this.panelAC.SuspendLayout();
             this.panelAM.SuspendLayout();
-            this.panelACR.SuspendLayout();
             this.SuspendLayout();
+            // 
+            // descargarBTN
+            // 
+            this.descargarBTN.Location = new System.Drawing.Point(468, 441);
+            this.descargarBTN.Name = "descargarBTN";
+            this.descargarBTN.Size = new System.Drawing.Size(101, 23);
+            this.descargarBTN.TabIndex = 23;
+            this.descargarBTN.Text = "Descarrgar en:";
+            this.descargarBTN.UseVisualStyleBackColor = true;
+            this.descargarBTN.Click += new System.EventHandler(this.descargarBTN_Click);
+            // 
+            // labelACR
+            // 
+            this.labelACR.AutoSize = true;
+            this.labelACR.Location = new System.Drawing.Point(85, 334);
+            this.labelACR.Name = "labelACR";
+            this.labelACR.Size = new System.Drawing.Size(110, 13);
+            this.labelACR.TabIndex = 22;
+            this.labelACR.Text = "Archivo/s corregido/s";
+            // 
+            // compararBTN
+            // 
+            this.compararBTN.Location = new System.Drawing.Point(891, 163);
+            this.compararBTN.Name = "compararBTN";
+            this.compararBTN.Size = new System.Drawing.Size(75, 23);
+            this.compararBTN.TabIndex = 21;
+            this.compararBTN.Text = "Comparar";
+            this.compararBTN.UseVisualStyleBackColor = true;
+            this.compararBTN.Click += new System.EventHandler(this.compararBTN_Click);
+            // 
+            // panelACR
+            // 
+            this.panelACR.BackColor = System.Drawing.Color.Black;
+            this.panelACR.Controls.Add(this.archivoACR);
+            this.panelACR.Location = new System.Drawing.Point(88, 363);
+            this.panelACR.Name = "panelACR";
+            this.panelACR.Size = new System.Drawing.Size(310, 176);
+            this.panelACR.TabIndex = 20;
+            // 
+            // archivoACR
+            // 
+            this.archivoACR.AutoSize = true;
+            this.archivoACR.ForeColor = System.Drawing.Color.White;
+            this.archivoACR.Location = new System.Drawing.Point(20, 34);
+            this.archivoACR.Name = "archivoACR";
+            this.archivoACR.Size = new System.Drawing.Size(0, 13);
+            this.archivoACR.TabIndex = 16;
             // 
             // labelAC
             // 
             this.labelAC.AutoSize = true;
-            this.labelAC.Location = new System.Drawing.Point(461, 18);
+            this.labelAC.Location = new System.Drawing.Point(509, 61);
             this.labelAC.Name = "labelAC";
             this.labelAC.Size = new System.Drawing.Size(99, 13);
-            this.labelAC.TabIndex = 11;
+            this.labelAC.TabIndex = 19;
             this.labelAC.Text = "Archivo a comparar";
             // 
             // panelAC
@@ -76,10 +123,10 @@
             this.panelAC.Controls.Add(this.examinarBTNAC);
             this.panelAC.Controls.Add(this.label6);
             this.panelAC.Controls.Add(this.labelArrastrarAC);
-            this.panelAC.Location = new System.Drawing.Point(464, 54);
+            this.panelAC.Location = new System.Drawing.Point(512, 97);
             this.panelAC.Name = "panelAC";
             this.panelAC.Size = new System.Drawing.Size(310, 176);
-            this.panelAC.TabIndex = 10;
+            this.panelAC.TabIndex = 18;
             // 
             // archivosCargadosAC
             // 
@@ -161,10 +208,10 @@
             // labelAM
             // 
             this.labelAM.AutoSize = true;
-            this.labelAM.Location = new System.Drawing.Point(37, 18);
+            this.labelAM.Location = new System.Drawing.Point(85, 61);
             this.labelAM.Name = "labelAM";
             this.labelAM.Size = new System.Drawing.Size(75, 13);
-            this.labelAM.TabIndex = 9;
+            this.labelAM.TabIndex = 17;
             this.labelAM.Text = "Archivo madre";
             // 
             // panelAM
@@ -176,10 +223,10 @@
             this.panelAM.Controls.Add(this.archivoCargado);
             this.panelAM.Controls.Add(this.examinarBTNAM);
             this.panelAM.Controls.Add(this.labelArrastrarAM);
-            this.panelAM.Location = new System.Drawing.Point(40, 54);
+            this.panelAM.Location = new System.Drawing.Point(88, 97);
             this.panelAM.Name = "panelAM";
             this.panelAM.Size = new System.Drawing.Size(310, 176);
-            this.panelAM.TabIndex = 8;
+            this.panelAM.TabIndex = 16;
             // 
             // archivosCargadosAM
             // 
@@ -240,58 +287,11 @@
             this.labelArrastrarAM.TabIndex = 2;
             this.labelArrastrarAM.Text = "o arrastre su archivo acá";
             // 
-            // panelACR
-            // 
-            this.panelACR.BackColor = System.Drawing.Color.Black;
-            this.panelACR.Controls.Add(this.archivoACR);
-            this.panelACR.Location = new System.Drawing.Point(40, 320);
-            this.panelACR.Name = "panelACR";
-            this.panelACR.Size = new System.Drawing.Size(310, 176);
-            this.panelACR.TabIndex = 12;
-            // 
-            // archivoACR
-            // 
-            this.archivoACR.AutoSize = true;
-            this.archivoACR.ForeColor = System.Drawing.Color.White;
-            this.archivoACR.Location = new System.Drawing.Point(20, 34);
-            this.archivoACR.Name = "archivoACR";
-            this.archivoACR.Size = new System.Drawing.Size(0, 13);
-            this.archivoACR.TabIndex = 16;
-            // 
-            // compararBTN
-            // 
-            this.compararBTN.Location = new System.Drawing.Point(843, 120);
-            this.compararBTN.Name = "compararBTN";
-            this.compararBTN.Size = new System.Drawing.Size(75, 23);
-            this.compararBTN.TabIndex = 13;
-            this.compararBTN.Text = "Comparar";
-            this.compararBTN.UseVisualStyleBackColor = true;
-            this.compararBTN.Click += new System.EventHandler(this.compararBTN_Click);
-            // 
-            // labelACR
-            // 
-            this.labelACR.AutoSize = true;
-            this.labelACR.Location = new System.Drawing.Point(37, 291);
-            this.labelACR.Name = "labelACR";
-            this.labelACR.Size = new System.Drawing.Size(110, 13);
-            this.labelACR.TabIndex = 14;
-            this.labelACR.Text = "Archivo/s corregido/s";
-            // 
-            // descargarBTN
-            // 
-            this.descargarBTN.Location = new System.Drawing.Point(420, 398);
-            this.descargarBTN.Name = "descargarBTN";
-            this.descargarBTN.Size = new System.Drawing.Size(101, 23);
-            this.descargarBTN.TabIndex = 15;
-            this.descargarBTN.Text = "Descarrgar en:";
-            this.descargarBTN.UseVisualStyleBackColor = true;
-            this.descargarBTN.Click += new System.EventHandler(this.descargarBTN_Click);
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(969, 594);
+            this.ClientSize = new System.Drawing.Size(1051, 601);
             this.Controls.Add(this.descargarBTN);
             this.Controls.Add(this.labelACR);
             this.Controls.Add(this.compararBTN);
@@ -302,12 +302,12 @@
             this.Controls.Add(this.panelAM);
             this.Name = "Form1";
             this.Text = "Form1";
+            this.panelACR.ResumeLayout(false);
+            this.panelACR.PerformLayout();
             this.panelAC.ResumeLayout(false);
             this.panelAC.PerformLayout();
             this.panelAM.ResumeLayout(false);
             this.panelAM.PerformLayout();
-            this.panelACR.ResumeLayout(false);
-            this.panelACR.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -315,6 +315,11 @@
 
         #endregion
 
+        private System.Windows.Forms.Button descargarBTN;
+        private System.Windows.Forms.Label labelACR;
+        private System.Windows.Forms.Button compararBTN;
+        private System.Windows.Forms.Panel panelACR;
+        private System.Windows.Forms.Label archivoACR;
         private System.Windows.Forms.Label labelAC;
         private System.Windows.Forms.Panel panelAC;
         private System.Windows.Forms.Label archivosCargadosAC;
@@ -333,11 +338,6 @@
         private System.Windows.Forms.Label archivoCargado;
         private System.Windows.Forms.Button examinarBTNAM;
         private System.Windows.Forms.Label labelArrastrarAM;
-        private System.Windows.Forms.Panel panelACR;
-        private System.Windows.Forms.Button compararBTN;
-        private System.Windows.Forms.Label labelACR;
-        private System.Windows.Forms.Button descargarBTN;
-        private System.Windows.Forms.Label archivoACR;
     }
 }
 

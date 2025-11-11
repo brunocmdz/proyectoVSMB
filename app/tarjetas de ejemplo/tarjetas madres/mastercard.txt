@@ -1,0 +1,5 @@
+°°°°tipo°°de°°tarjeta°°:°°mastercard°°xxxx°°°°
+////num//de//tarjeta//://xxxx//xxxx//xxxx//xxxx////
+____fechas__validas__:__xx__xx__xx__xx____
+<<<<titular>>de<<la>>tarjeta<<:>>xxxx<<xxxx<<<<
+====codigo==de==seguridad==:==xxx====
