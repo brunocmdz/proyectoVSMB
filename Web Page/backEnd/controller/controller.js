@@ -1,5 +1,18 @@
 const User = require('../model/user');
 
+const editUser = async(req, res) => {
+    try {
+        const { email, firstName, lastName, id } = req.query;
+        const users = await User.update(
+            { firstName, lastName, email },
+            { where: { id } }
+        );
+        res.json(users);
+    } catch (err) {
+        console.error('Error al obtener los usuarios:', err);
+        res.status(500).json({ message: 'Error interno del servidor', error });
+    }
+};
 const getUser = async(_req, res) => {
     try {
         const users = await User.findAll();
@@ -56,5 +69,5 @@ async function login(req, res) {
     res.status(500).json({ message: "Error interno del servidor", err });
   }
 };
-module.exports = { getUser, registerUser, getUserByEmail, login };
+module.exports = { getUser, registerUser, getUserByEmail, login, editUser };
 

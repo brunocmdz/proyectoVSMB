@@ -2,7 +2,7 @@ const express = require('express');
 const app = express();
 const port = 3000;
 const sequelize = require('./config/database');
-const { getUser, registerUser, getUserByEmail, login } = require('./controller/controller');
+const { editUser, getUser, registerUser, getUserByEmail, login } = require('./controller/controller');
 const { isAuth, isAdmin } = require('./midlewares/auth');
 
 app.use(express.json());
@@ -22,6 +22,7 @@ app.get('/users', isAuth, getUser);
 app.get('/users/:email', getUserByEmail);
 app.post('/users/regist/',registerUser);
 app.post('/users/login/', login);
+app.post('/users/editUser/', editUser);
 
 app.listen(port, async() => {
     await sequelize.sync({force: false});

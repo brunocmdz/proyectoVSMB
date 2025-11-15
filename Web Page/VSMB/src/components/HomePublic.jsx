@@ -3,8 +3,8 @@ import img from '../assets/imagenmuimportante.png'
 function HomePublic({ onRegisterClick}) {
   return (
     <div className="container">
-        <div class="card1">
-        <div class="text-container">
+        <div className="card1">
+        <div className="text-container">
             <p>
             Con V-S-M-B comparar archivos nunca fue tan fácil: descubrí las diferencias,
              detectá los cambios y mantené tus proyectos siempre organizados.
@@ -13,14 +13,14 @@ function HomePublic({ onRegisterClick}) {
             </p>
         </div>
 
-        <div class="img-container">
-            <div class="img"><img src={img} /></div>
+        <div className="img-container">
+            <div className="img"><img src={img} /></div>
         </div>
         </div>
 
-        <div class="card2">
-        <div class="container">
-            <div class="text-container2">
+        <div className="card2">
+        <div className="container">
+            <div className="text-container2">
             <p>
                 ¿Tenés varios archivos parecidos y no sabés cuál es la versión más reciente o cuál cambió?
                 Comparador de Archivos es la herramienta ideal para detectar diferencias entre documentos,
