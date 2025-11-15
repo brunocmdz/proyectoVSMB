@@ -1,4 +1,4 @@
-import './home.css';
+import './styles/home.css';
 import img from '../assets/imagenmuimportante.png'
 function HomePrivate({ onRegisterClick}) {
   return (

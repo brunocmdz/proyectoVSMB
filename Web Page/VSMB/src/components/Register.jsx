@@ -1,4 +1,4 @@
-import './Register.css';
+import './styles/Register.css';
 import axios from 'axios';
 import { useState } from 'react';
 export default function Register() {

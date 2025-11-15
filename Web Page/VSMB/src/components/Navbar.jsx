@@ -1,4 +1,4 @@
-import './navbar.css';
+import './styles/navbar.css';
 import { useEffect, useState } from 'react';
 import UserModal from './UserModal'; // 👈 importá el modal
 

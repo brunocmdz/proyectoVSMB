@@ -1,4 +1,4 @@
-import './UserModal.css';
+import './styles/UserModal.css';
 
 function UserModal({ userName, userId, userEmail, onClose, onLogout }) {
   return (
