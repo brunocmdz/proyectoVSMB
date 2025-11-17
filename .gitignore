@@ -1,0 +1,25 @@
+# Archivos de Visual Studio (VS)
+
+# Carpetas de caché y configuración local que causan el error
+.vs/
+
+# Binarios y objetos de compilación
+[Bb]in/
+[Oo]bj/
+
+# Archivos de usuario/solución
+*.suo
+*.user
+*.useros
+*.bak
+*.ncb
+*.pdb
+*.opensdf
+*.sdf
+*.ipch
+
+# Archivos de VS Code
+.vscode/
+
+# Dependencias de NodeJS (si la parte web las usa)
+node_modules/

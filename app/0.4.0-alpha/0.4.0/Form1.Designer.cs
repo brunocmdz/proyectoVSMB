@@ -268,7 +268,7 @@
             // 
             this.examinarBTNAM.BackColor = System.Drawing.Color.Black;
             this.examinarBTNAM.ForeColor = System.Drawing.Color.White;
-            this.examinarBTNAM.Location = new System.Drawing.Point(119, 58);
+            this.examinarBTNAM.Location = new System.Drawing.Point(105, 58);
             this.examinarBTNAM.Name = "examinarBTNAM";
             this.examinarBTNAM.Size = new System.Drawing.Size(75, 23);
             this.examinarBTNAM.TabIndex = 2;

@@ -21,13 +21,120 @@ namespace _0._4._0
         public Form1()
         {
             InitializeComponent();
+
+            // Configuración de Drag & Drop para panelAM
             panelAM.AllowDrop = true;
             panelAM.DragEnter += panelDrop_DragEnter;
             panelAM.DragDrop += panelAM_DragDrop;
+
+            // Configuración de Drag & Drop para panelAC
             panelAC.AllowDrop = true;
             panelAC.DragEnter += panelDrop_DragEnter;
             panelAC.DragDrop += panelAC_DragDrop;
+
+
+            AplicarEstilo();
         }
+
+        private void AplicarEstilo()
+        {
+            Color fondo = Color.FromArgb(20, 20, 80);
+            Color celeste = Color.FromArgb(55, 229, 255);
+            Color celesteSuave = Color.FromArgb(120, 240, 255);
+
+            this.BackColor = fondo;
+
+        
+            foreach (var lbl in this.Controls.OfType<Label>())
+            {
+                lbl.ForeColor = celeste;
+                lbl.Font = new Font("Segoe UI Semibold", 18F, FontStyle.Bold);
+                lbl.BackColor = Color.Transparent;
+            }
+
+         
+            Label[] labelsArrastre = { labelArrastrarAM, labelArrastrarAC };
+
+            foreach (var l in labelsArrastre)
+            {
+                l.AutoSize = false;
+                l.Width = 260;          // Ancho seguro
+                l.Height = 28;          // Altura exacta
+                l.ForeColor = celesteSuave;
+                l.Font = new Font("Segoe UI Semibold", 14F, FontStyle.Italic);
+                l.BackColor = Color.Transparent;
+                l.TextAlign = ContentAlignment.MiddleCenter;
+
+                // Centrarlos dentro del panel
+                if (l.Parent != null)
+                {
+                    l.Left = (l.Parent.Width - l.Width) / 2;
+                }
+            }
+
+      
+            Button[] botonesExaminar = { examinarBTNAM, examinarBTNAC };
+
+            foreach (var btn in botonesExaminar)
+            {
+                btn.FlatStyle = FlatStyle.Flat;
+                btn.FlatAppearance.BorderSize = 2;
+                btn.FlatAppearance.BorderColor = celeste;
+                btn.ForeColor = celeste;
+                btn.Font = new Font("Segoe UI Semibold", 14F, FontStyle.Bold);
+                btn.BackColor = Color.FromArgb(30, 35, 120);
+
+                btn.Size = new Size(150, 45);
+                btn.AutoSize = false;
+                btn.AutoEllipsis = false;
+                btn.TextAlign = ContentAlignment.MiddleCenter;
+                btn.Cursor = Cursors.Hand;
+
+                if (btn.Parent != null)
+                {
+                    btn.Left = (btn.Parent.Width - btn.Width) / 2;
+                }
+   
+            }
+
+        
+            compararBTN.BackColor = Color.FromArgb(0, 140, 255);
+            compararBTN.ForeColor = Color.White;
+            compararBTN.FlatAppearance.BorderSize = 0;
+            compararBTN.Font = new Font("Segoe UI Semibold", 16F, FontStyle.Bold);
+            compararBTN.Size = new Size(180, 55);
+            compararBTN.Cursor = Cursors.Hand;
+
+     
+            descargarBTN.FlatStyle = FlatStyle.Standard;
+            descargarBTN.BackColor = SystemColors.Control;
+            descargarBTN.ForeColor = Color.Black;
+            descargarBTN.Font = new Font("Segoe UI", 12F, FontStyle.Regular);
+            descargarBTN.Text = "Descargar";
+            descargarBTN.AutoSize = true;
+            descargarBTN.Cursor = Cursors.Hand;
+
+  
+            AplicarEstiloPanel(panelAM);
+            AplicarEstiloPanel(panelAC);
+        }
+
+
+        private void AplicarEstiloPanel(Panel panel)
+        {
+            Color celesteSuave = Color.FromArgb(120, 240, 255);
+
+            panel.BackColor = Color.Transparent;
+            panel.BorderStyle = BorderStyle.None;
+
+            panel.Paint += (s, e) =>
+            {
+                Pen p = new Pen(celesteSuave, 2);
+                p.DashPattern = new float[] { 5, 5 };
+                e.Graphics.DrawRectangle(p, 5, 5, panel.Width - 10, panel.Height - 10);
+            };
+        }
+
 
         private void panelDrop_DragEnter(object sender, DragEventArgs e)
         {
@@ -131,6 +238,7 @@ namespace _0._4._0
             }
         }
 
+
         private static readonly char[] BordesPermitidos = new[] { '°', '_', '/', '=', '<', '>', '-', };
 
         private static string ArreglarFormatoLinea(string linea)
@@ -183,7 +291,7 @@ namespace _0._4._0
             inner = Regex.Replace(inner, @"[/]{3,}", "//");
 
             inner = Regex.Replace(inner,
-                @"<+.*?titular.*?:.*?([A-Za-zÁÉÍÓÚáéíóúÑñ]{2,})[<>\s]+([A-Za-zÁÉÍÓÚáéíóúÑñ]{2,}).*?>+",
+                @"<<<<titular>>:>>([A-Za-zÁÉÍÓÚáéíóúÑñ]{2,})<<([A-Za-zÁÉÍÓÚáéíóúÑñ]{2,})>>>>",
                 m =>
                 {
                     string nombre = CultureInfo.CurrentCulture.TextInfo.ToTitleCase(m.Groups[1].Value.ToLower());
