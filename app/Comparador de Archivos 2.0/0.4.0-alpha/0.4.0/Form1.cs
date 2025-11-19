@@ -256,5 +256,30 @@ namespace _0._4._0
             // ...
             return linea.Trim();
         }
+
+        private void buttonClean_Click(object sender, EventArgs e)
+        {
+            // Limpiar las rutas de los archivos cargados
+            rutasArchivosAC = null;
+            rutasArchivosCorregidos.Clear();
+
+            // Restablecer los controles de la interfaz de usuario del panelAC
+            archivoCargadoAC.Text = ""; // Limpia el texto de la etiqueta
+            archivosCargadosAC.Text = ""; // Limpia la lista de archivos cargados
+            examinarBTNAC.Visible = true; // Mostrar el botón de examinar
+            labelArrastrarAC.Visible = true; // Mostrar la etiqueta de arrastrar
+
+            // Restablecer los controles de la interfaz de usuario del panelAM
+            archivoCargadoAM.Text = ""; // Limpia el texto de la etiqueta
+            archivosCargadosAM.Text = ""; // Limpia la lista de archivos cargados
+            examinarBTNAM.Visible = true; // Mostrar el botón de examinar
+            labelArrastrarAM.Visible = true; // Mostrar la etiqueta de arrastrar
+
+            // Limpiar el área de descargas (archivos comparados)
+            archivoACR.Text = ""; // Limpia el contenido del rectángulo de descargas
+
+            // Mostrar un mensaje opcional para confirmar la limpieza
+            MessageBox.Show("Los archivos cargados y comparados han sido limpiados. Ahora puedes cargar nuevos archivos.", "Archivos limpiados", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+      }
     }
-}

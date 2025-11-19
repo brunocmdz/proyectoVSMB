@@ -53,6 +53,7 @@
             this.examinarBTNAM = new System.Windows.Forms.Button();
             this.labelArrastrarAM = new System.Windows.Forms.Label();
             this.historialBTN = new System.Windows.Forms.Button();
+            this.buttonClean = new System.Windows.Forms.Button();
             this.panelACR.SuspendLayout();
             this.panelAC.SuspendLayout();
             this.panelAM.SuspendLayout();
@@ -62,7 +63,7 @@
             // 
             this.descargarBTN.ForeColor = System.Drawing.Color.MidnightBlue;
             this.descargarBTN.Location = new System.Drawing.Point(551, 531);
-            this.descargarBTN.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.descargarBTN.Margin = new System.Windows.Forms.Padding(4);
             this.descargarBTN.Name = "descargarBTN";
             this.descargarBTN.Size = new System.Drawing.Size(135, 30);
             this.descargarBTN.TabIndex = 23;
@@ -85,7 +86,7 @@
             this.compararBTN.BackColor = System.Drawing.Color.Snow;
             this.compararBTN.ForeColor = System.Drawing.Color.MidnightBlue;
             this.compararBTN.Location = new System.Drawing.Point(551, 475);
-            this.compararBTN.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.compararBTN.Margin = new System.Windows.Forms.Padding(4);
             this.compararBTN.Name = "compararBTN";
             this.compararBTN.Size = new System.Drawing.Size(135, 30);
             this.compararBTN.TabIndex = 21;
@@ -99,7 +100,7 @@
             this.panelACR.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panelACR.Controls.Add(this.archivoACR);
             this.panelACR.Location = new System.Drawing.Point(117, 475);
-            this.panelACR.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panelACR.Margin = new System.Windows.Forms.Padding(4);
             this.panelACR.Name = "panelACR";
             this.panelACR.Size = new System.Drawing.Size(413, 230);
             this.panelACR.TabIndex = 20;
@@ -137,7 +138,7 @@
             this.panelAC.Controls.Add(this.label6);
             this.panelAC.Controls.Add(this.labelArrastrarAC);
             this.panelAC.Location = new System.Drawing.Point(683, 127);
-            this.panelAC.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panelAC.Margin = new System.Windows.Forms.Padding(4);
             this.panelAC.Name = "panelAC";
             this.panelAC.Size = new System.Drawing.Size(413, 230);
             this.panelAC.TabIndex = 18;
@@ -197,7 +198,7 @@
             this.examinarBTNAC.BackColor = System.Drawing.Color.MidnightBlue;
             this.examinarBTNAC.ForeColor = System.Drawing.Color.White;
             this.examinarBTNAC.Location = new System.Drawing.Point(166, 76);
-            this.examinarBTNAC.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.examinarBTNAC.Margin = new System.Windows.Forms.Padding(4);
             this.examinarBTNAC.Name = "examinarBTNAC";
             this.examinarBTNAC.Size = new System.Drawing.Size(100, 30);
             this.examinarBTNAC.TabIndex = 2;
@@ -249,7 +250,7 @@
             this.panelAM.Controls.Add(this.labelArrastrarAM);
             this.panelAM.ForeColor = System.Drawing.Color.GhostWhite;
             this.panelAM.Location = new System.Drawing.Point(117, 127);
-            this.panelAM.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panelAM.Margin = new System.Windows.Forms.Padding(4);
             this.panelAM.Name = "panelAM";
             this.panelAM.Size = new System.Drawing.Size(413, 230);
             this.panelAM.TabIndex = 16;
@@ -299,7 +300,7 @@
             this.examinarBTNAM.BackColor = System.Drawing.Color.MidnightBlue;
             this.examinarBTNAM.ForeColor = System.Drawing.Color.White;
             this.examinarBTNAM.Location = new System.Drawing.Point(149, 76);
-            this.examinarBTNAM.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.examinarBTNAM.Margin = new System.Windows.Forms.Padding(4);
             this.examinarBTNAM.Name = "examinarBTNAM";
             this.examinarBTNAM.Size = new System.Drawing.Size(100, 30);
             this.examinarBTNAM.TabIndex = 2;
@@ -322,8 +323,8 @@
             // historialBTN
             // 
             this.historialBTN.ForeColor = System.Drawing.Color.MidnightBlue;
-            this.historialBTN.Location = new System.Drawing.Point(551, 587);
-            this.historialBTN.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.historialBTN.Location = new System.Drawing.Point(551, 641);
+            this.historialBTN.Margin = new System.Windows.Forms.Padding(4);
             this.historialBTN.Name = "historialBTN";
             this.historialBTN.Size = new System.Drawing.Size(135, 30);
             this.historialBTN.TabIndex = 24;
@@ -331,12 +332,25 @@
             this.historialBTN.UseVisualStyleBackColor = true;
             this.historialBTN.Click += new System.EventHandler(this.historialBTN_Click);
             // 
+            // buttonClean
+            // 
+            this.buttonClean.ForeColor = System.Drawing.Color.MidnightBlue;
+            this.buttonClean.Location = new System.Drawing.Point(551, 587);
+            this.buttonClean.Margin = new System.Windows.Forms.Padding(4);
+            this.buttonClean.Name = "buttonClean";
+            this.buttonClean.Size = new System.Drawing.Size(135, 30);
+            this.buttonClean.TabIndex = 25;
+            this.buttonClean.Text = "Limpiar";
+            this.buttonClean.UseVisualStyleBackColor = true;
+            this.buttonClean.Click += new System.EventHandler(this.buttonClean_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.MidnightBlue;
             this.ClientSize = new System.Drawing.Size(1202, 786);
+            this.Controls.Add(this.buttonClean);
             this.Controls.Add(this.historialBTN);
             this.Controls.Add(this.descargarBTN);
             this.Controls.Add(this.labelACR);
@@ -350,7 +364,7 @@
             this.ForeColor = System.Drawing.Color.Snow;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -392,5 +406,6 @@
         private System.Windows.Forms.Button examinarBTNAM;
         private System.Windows.Forms.Label labelArrastrarAM;
         private System.Windows.Forms.Button historialBTN; // Nueva propiedad añadida
+        private System.Windows.Forms.Button buttonClean;
     }
 }
