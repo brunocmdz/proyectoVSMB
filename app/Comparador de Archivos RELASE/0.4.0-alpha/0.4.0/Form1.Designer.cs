@@ -1,0 +1,438 @@
+﻿namespace _0._4._0
+{
+    partial class Form1
+    {
+        /// <summary>
+        /// Variable del diseñador necesaria.
+        /// </summary>
+        private System.ComponentModel.IContainer components = null;
+
+        /// <summary>
+        /// Limpiar los recursos que se estén usando.
+        /// </summary>
+        /// <param name="disposing">true si los recursos administrados se deben desechar; false en caso contrario.</param>
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing && (components != null))
+            {
+                components.Dispose();
+            }
+            base.Dispose(disposing);
+        }
+
+        #region Código generado por el Diseñador de Windows Forms
+
+        /// <summary>
+        /// Método necesario para admitir el Diseñador. No se puede modificar
+        /// el contenido de este método con el editor de código.
+        /// </summary>
+        private void InitializeComponent()
+        {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
+            this.descargarBTN = new System.Windows.Forms.Button();
+            this.labelACR = new System.Windows.Forms.Label();
+            this.compararBTN = new System.Windows.Forms.Button();
+            this.panelACR = new System.Windows.Forms.Panel();
+            this.archivoACR = new System.Windows.Forms.Label();
+            this.labelAC = new System.Windows.Forms.Label();
+            this.panelAC = new System.Windows.Forms.Panel();
+            this.archivosCargadosAC = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.archivoCargadoAC = new System.Windows.Forms.Label();
+            this.examinarBTNAC = new System.Windows.Forms.Button();
+            this.label6 = new System.Windows.Forms.Label();
+            this.labelArrastrarAC = new System.Windows.Forms.Label();
+            this.labelAM = new System.Windows.Forms.Label();
+            this.panelAM = new System.Windows.Forms.Panel();
+            this.archivosCargadosAM = new System.Windows.Forms.Label();
+            this.archivosCargados = new System.Windows.Forms.Label();
+            this.archivoCargadoAM = new System.Windows.Forms.Label();
+            this.archivoCargado = new System.Windows.Forms.Label();
+            this.examinarBTNAM = new System.Windows.Forms.Button();
+            this.labelArrastrarAM = new System.Windows.Forms.Label();
+            this.historialBTN = new System.Windows.Forms.Button();
+            this.buttonClean = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.panelACR.SuspendLayout();
+            this.panelAC.SuspendLayout();
+            this.panelAM.SuspendLayout();
+            this.SuspendLayout();
+            // 
+            // descargarBTN
+            // 
+            this.descargarBTN.ForeColor = System.Drawing.Color.MidnightBlue;
+            this.descargarBTN.Location = new System.Drawing.Point(551, 531);
+            this.descargarBTN.Margin = new System.Windows.Forms.Padding(4);
+            this.descargarBTN.Name = "descargarBTN";
+            this.descargarBTN.Size = new System.Drawing.Size(135, 30);
+            this.descargarBTN.TabIndex = 23;
+            this.descargarBTN.Text = "Descargar";
+            this.descargarBTN.UseVisualStyleBackColor = true;
+            this.descargarBTN.Click += new System.EventHandler(this.descargarBTN_Click);
+            // 
+            // labelACR
+            // 
+            this.labelACR.AutoSize = true;
+            this.labelACR.Location = new System.Drawing.Point(113, 437);
+            this.labelACR.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.labelACR.Name = "labelACR";
+            this.labelACR.Size = new System.Drawing.Size(142, 17);
+            this.labelACR.TabIndex = 22;
+            this.labelACR.Text = "Archivo/s corregido/s";
+            // 
+            // compararBTN
+            // 
+            this.compararBTN.BackColor = System.Drawing.Color.Snow;
+            this.compararBTN.ForeColor = System.Drawing.Color.MidnightBlue;
+            this.compararBTN.Location = new System.Drawing.Point(551, 475);
+            this.compararBTN.Margin = new System.Windows.Forms.Padding(4);
+            this.compararBTN.Name = "compararBTN";
+            this.compararBTN.Size = new System.Drawing.Size(135, 30);
+            this.compararBTN.TabIndex = 21;
+            this.compararBTN.Text = "Comparar";
+            this.compararBTN.UseVisualStyleBackColor = false;
+            this.compararBTN.Click += new System.EventHandler(this.compararBTN_Click);
+            // 
+            // panelACR
+            // 
+            this.panelACR.BackColor = System.Drawing.Color.MidnightBlue;
+            this.panelACR.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panelACR.Controls.Add(this.archivoACR);
+            this.panelACR.Location = new System.Drawing.Point(117, 475);
+            this.panelACR.Margin = new System.Windows.Forms.Padding(4);
+            this.panelACR.Name = "panelACR";
+            this.panelACR.Size = new System.Drawing.Size(413, 230);
+            this.panelACR.TabIndex = 20;
+            // 
+            // archivoACR
+            // 
+            this.archivoACR.AutoSize = true;
+            this.archivoACR.ForeColor = System.Drawing.Color.White;
+            this.archivoACR.Location = new System.Drawing.Point(27, 44);
+            this.archivoACR.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.archivoACR.Name = "archivoACR";
+            this.archivoACR.Size = new System.Drawing.Size(0, 17);
+            this.archivoACR.TabIndex = 16;
+            // 
+            // labelAC
+            // 
+            this.labelAC.AutoSize = true;
+            this.labelAC.Location = new System.Drawing.Point(680, 80);
+            this.labelAC.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.labelAC.Name = "labelAC";
+            this.labelAC.Size = new System.Drawing.Size(128, 17);
+            this.labelAC.TabIndex = 19;
+            this.labelAC.Text = "Archivo a comparar";
+            // 
+            // panelAC
+            // 
+            this.panelAC.BackColor = System.Drawing.Color.MidnightBlue;
+            this.panelAC.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panelAC.Controls.Add(this.archivosCargadosAC);
+            this.panelAC.Controls.Add(this.label3);
+            this.panelAC.Controls.Add(this.label2);
+            this.panelAC.Controls.Add(this.label4);
+            this.panelAC.Controls.Add(this.archivoCargadoAC);
+            this.panelAC.Controls.Add(this.examinarBTNAC);
+            this.panelAC.Controls.Add(this.label6);
+            this.panelAC.Controls.Add(this.labelArrastrarAC);
+            this.panelAC.Location = new System.Drawing.Point(683, 127);
+            this.panelAC.Margin = new System.Windows.Forms.Padding(4);
+            this.panelAC.Name = "panelAC";
+            this.panelAC.Size = new System.Drawing.Size(413, 230);
+            this.panelAC.TabIndex = 18;
+            // 
+            // archivosCargadosAC
+            // 
+            this.archivosCargadosAC.AutoSize = true;
+            this.archivosCargadosAC.ForeColor = System.Drawing.Color.White;
+            this.archivosCargadosAC.Location = new System.Drawing.Point(19, 67);
+            this.archivosCargadosAC.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.archivosCargadosAC.Name = "archivosCargadosAC";
+            this.archivosCargadosAC.Size = new System.Drawing.Size(0, 17);
+            this.archivosCargadosAC.TabIndex = 13;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.ForeColor = System.Drawing.Color.White;
+            this.label3.Location = new System.Drawing.Point(53, 64);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(0, 17);
+            this.label3.TabIndex = 3;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.ForeColor = System.Drawing.Color.White;
+            this.label2.Location = new System.Drawing.Point(45, 64);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(0, 17);
+            this.label2.TabIndex = 11;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.ForeColor = System.Drawing.Color.White;
+            this.label4.Location = new System.Drawing.Point(49, 30);
+            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(0, 17);
+            this.label4.TabIndex = 2;
+            // 
+            // archivoCargadoAC
+            // 
+            this.archivoCargadoAC.AutoSize = true;
+            this.archivoCargadoAC.ForeColor = System.Drawing.Color.White;
+            this.archivoCargadoAC.Location = new System.Drawing.Point(19, 30);
+            this.archivoCargadoAC.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.archivoCargadoAC.Name = "archivoCargadoAC";
+            this.archivoCargadoAC.Size = new System.Drawing.Size(0, 17);
+            this.archivoCargadoAC.TabIndex = 12;
+            // 
+            // examinarBTNAC
+            // 
+            this.examinarBTNAC.BackColor = System.Drawing.Color.MidnightBlue;
+            this.examinarBTNAC.ForeColor = System.Drawing.Color.White;
+            this.examinarBTNAC.Location = new System.Drawing.Point(166, 76);
+            this.examinarBTNAC.Margin = new System.Windows.Forms.Padding(4);
+            this.examinarBTNAC.Name = "examinarBTNAC";
+            this.examinarBTNAC.Size = new System.Drawing.Size(100, 30);
+            this.examinarBTNAC.TabIndex = 2;
+            this.examinarBTNAC.Text = "Examinar";
+            this.examinarBTNAC.UseVisualStyleBackColor = false;
+            this.examinarBTNAC.Click += new System.EventHandler(this.examinarBTNAC_Click);
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.ForeColor = System.Drawing.Color.White;
+            this.label6.Location = new System.Drawing.Point(41, 30);
+            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(0, 17);
+            this.label6.TabIndex = 10;
+            // 
+            // labelArrastrarAC
+            // 
+            this.labelArrastrarAC.AutoSize = true;
+            this.labelArrastrarAC.BackColor = System.Drawing.Color.MidnightBlue;
+            this.labelArrastrarAC.ForeColor = System.Drawing.Color.White;
+            this.labelArrastrarAC.Location = new System.Drawing.Point(138, 124);
+            this.labelArrastrarAC.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.labelArrastrarAC.Name = "labelArrastrarAC";
+            this.labelArrastrarAC.Size = new System.Drawing.Size(158, 17);
+            this.labelArrastrarAC.TabIndex = 2;
+            this.labelArrastrarAC.Text = "o arrastre su archivo acá";
+            // 
+            // labelAM
+            // 
+            this.labelAM.AutoSize = true;
+            this.labelAM.Location = new System.Drawing.Point(114, 80);
+            this.labelAM.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.labelAM.Name = "labelAM";
+            this.labelAM.Size = new System.Drawing.Size(98, 17);
+            this.labelAM.TabIndex = 17;
+            this.labelAM.Text = "Archivo madre";
+            // 
+            // panelAM
+            // 
+            this.panelAM.BackColor = System.Drawing.Color.MidnightBlue;
+            this.panelAM.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panelAM.Controls.Add(this.archivosCargadosAM);
+            this.panelAM.Controls.Add(this.archivosCargados);
+            this.panelAM.Controls.Add(this.archivoCargadoAM);
+            this.panelAM.Controls.Add(this.archivoCargado);
+            this.panelAM.Controls.Add(this.examinarBTNAM);
+            this.panelAM.Controls.Add(this.labelArrastrarAM);
+            this.panelAM.ForeColor = System.Drawing.Color.GhostWhite;
+            this.panelAM.Location = new System.Drawing.Point(117, 127);
+            this.panelAM.Margin = new System.Windows.Forms.Padding(4);
+            this.panelAM.Name = "panelAM";
+            this.panelAM.Size = new System.Drawing.Size(413, 230);
+            this.panelAM.TabIndex = 16;
+            // 
+            // archivosCargadosAM
+            // 
+            this.archivosCargadosAM.AutoSize = true;
+            this.archivosCargadosAM.ForeColor = System.Drawing.Color.White;
+            this.archivosCargadosAM.Location = new System.Drawing.Point(27, 67);
+            this.archivosCargadosAM.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.archivosCargadosAM.Name = "archivosCargadosAM";
+            this.archivosCargadosAM.Size = new System.Drawing.Size(0, 17);
+            this.archivosCargadosAM.TabIndex = 9;
+            // 
+            // archivosCargados
+            // 
+            this.archivosCargados.AutoSize = true;
+            this.archivosCargados.ForeColor = System.Drawing.Color.White;
+            this.archivosCargados.Location = new System.Drawing.Point(53, 64);
+            this.archivosCargados.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.archivosCargados.Name = "archivosCargados";
+            this.archivosCargados.Size = new System.Drawing.Size(0, 17);
+            this.archivosCargados.TabIndex = 3;
+            // 
+            // archivoCargadoAM
+            // 
+            this.archivoCargadoAM.AutoSize = true;
+            this.archivoCargadoAM.ForeColor = System.Drawing.Color.White;
+            this.archivoCargadoAM.Location = new System.Drawing.Point(27, 30);
+            this.archivoCargadoAM.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.archivoCargadoAM.Name = "archivoCargadoAM";
+            this.archivoCargadoAM.Size = new System.Drawing.Size(0, 17);
+            this.archivoCargadoAM.TabIndex = 8;
+            // 
+            // archivoCargado
+            // 
+            this.archivoCargado.AutoSize = true;
+            this.archivoCargado.ForeColor = System.Drawing.Color.White;
+            this.archivoCargado.Location = new System.Drawing.Point(49, 30);
+            this.archivoCargado.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.archivoCargado.Name = "archivoCargado";
+            this.archivoCargado.Size = new System.Drawing.Size(0, 17);
+            this.archivoCargado.TabIndex = 2;
+            // 
+            // examinarBTNAM
+            // 
+            this.examinarBTNAM.BackColor = System.Drawing.Color.MidnightBlue;
+            this.examinarBTNAM.ForeColor = System.Drawing.Color.White;
+            this.examinarBTNAM.Location = new System.Drawing.Point(149, 76);
+            this.examinarBTNAM.Margin = new System.Windows.Forms.Padding(4);
+            this.examinarBTNAM.Name = "examinarBTNAM";
+            this.examinarBTNAM.Size = new System.Drawing.Size(100, 30);
+            this.examinarBTNAM.TabIndex = 2;
+            this.examinarBTNAM.Text = "Examinar";
+            this.examinarBTNAM.UseVisualStyleBackColor = false;
+            this.examinarBTNAM.Click += new System.EventHandler(this.examinarBTNAM_Click);
+            // 
+            // labelArrastrarAM
+            // 
+            this.labelArrastrarAM.AutoSize = true;
+            this.labelArrastrarAM.BackColor = System.Drawing.Color.MidnightBlue;
+            this.labelArrastrarAM.ForeColor = System.Drawing.Color.White;
+            this.labelArrastrarAM.Location = new System.Drawing.Point(120, 124);
+            this.labelArrastrarAM.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.labelArrastrarAM.Name = "labelArrastrarAM";
+            this.labelArrastrarAM.Size = new System.Drawing.Size(158, 17);
+            this.labelArrastrarAM.TabIndex = 2;
+            this.labelArrastrarAM.Text = "o arrastre su archivo acá";
+            // 
+            // historialBTN
+            // 
+            this.historialBTN.ForeColor = System.Drawing.Color.MidnightBlue;
+            this.historialBTN.Location = new System.Drawing.Point(551, 641);
+            this.historialBTN.Margin = new System.Windows.Forms.Padding(4);
+            this.historialBTN.Name = "historialBTN";
+            this.historialBTN.Size = new System.Drawing.Size(135, 30);
+            this.historialBTN.TabIndex = 24;
+            this.historialBTN.Text = "Historial";
+            this.historialBTN.UseVisualStyleBackColor = true;
+            this.historialBTN.Click += new System.EventHandler(this.historialBTN_Click);
+            // 
+            // buttonClean
+            // 
+            this.buttonClean.ForeColor = System.Drawing.Color.MidnightBlue;
+            this.buttonClean.Location = new System.Drawing.Point(551, 587);
+            this.buttonClean.Margin = new System.Windows.Forms.Padding(4);
+            this.buttonClean.Name = "buttonClean";
+            this.buttonClean.Size = new System.Drawing.Size(135, 30);
+            this.buttonClean.TabIndex = 25;
+            this.buttonClean.Text = "Limpiar";
+            this.buttonClean.UseVisualStyleBackColor = true;
+            this.buttonClean.Click += new System.EventHandler(this.buttonClean_Click);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Leelawadee UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(12, 9);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(164, 30);
+            this.label1.TabIndex = 26;
+            this.label1.Text = "COMPARADOR";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Leelawadee UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.Color.DeepSkyBlue;
+            this.label5.Location = new System.Drawing.Point(169, 9);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(72, 30);
+            this.label5.TabIndex = 27;
+            this.label5.Text = "VSMB";
+            // 
+            // Form1
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.MidnightBlue;
+            this.ClientSize = new System.Drawing.Size(1202, 749);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.buttonClean);
+            this.Controls.Add(this.historialBTN);
+            this.Controls.Add(this.descargarBTN);
+            this.Controls.Add(this.labelACR);
+            this.Controls.Add(this.compararBTN);
+            this.Controls.Add(this.panelACR);
+            this.Controls.Add(this.labelAC);
+            this.Controls.Add(this.panelAC);
+            this.Controls.Add(this.labelAM);
+            this.Controls.Add(this.panelAM);
+            this.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ForeColor = System.Drawing.Color.Snow;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(4);
+            this.MaximizeBox = false;
+            this.Name = "Form1";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "VSMB";
+            this.panelACR.ResumeLayout(false);
+            this.panelACR.PerformLayout();
+            this.panelAC.ResumeLayout(false);
+            this.panelAC.PerformLayout();
+            this.panelAM.ResumeLayout(false);
+            this.panelAM.PerformLayout();
+            this.ResumeLayout(false);
+            this.PerformLayout();
+
+        }
+
+        #endregion
+
+        private System.Windows.Forms.Button descargarBTN;
+        private System.Windows.Forms.Label labelACR;
+        private System.Windows.Forms.Button compararBTN;
+        private System.Windows.Forms.Panel panelACR;
+        private System.Windows.Forms.Label archivoACR;
+        private System.Windows.Forms.Label labelAC;
+        private System.Windows.Forms.Panel panelAC;
+        private System.Windows.Forms.Label archivosCargadosAC;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label archivoCargadoAC;
+        private System.Windows.Forms.Button examinarBTNAC;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label labelArrastrarAC;
+        private System.Windows.Forms.Label labelAM;
+        private System.Windows.Forms.Panel panelAM;
+        private System.Windows.Forms.Label archivosCargadosAM;
+        private System.Windows.Forms.Label archivosCargados;
+        private System.Windows.Forms.Label archivoCargadoAM;
+        private System.Windows.Forms.Label archivoCargado;
+        private System.Windows.Forms.Button examinarBTNAM;
+        private System.Windows.Forms.Label labelArrastrarAM;
+        private System.Windows.Forms.Button historialBTN; // Nueva propiedad añadida
+        private System.Windows.Forms.Button buttonClean;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label5;
+    }
+}
