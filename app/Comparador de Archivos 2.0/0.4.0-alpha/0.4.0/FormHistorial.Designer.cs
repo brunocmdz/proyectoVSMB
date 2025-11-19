@@ -21,6 +21,7 @@
 
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormHistorial));
             this.dgvHistorial = new System.Windows.Forms.DataGridView();
             this.btnVerContenido = new System.Windows.Forms.Button();
             this.txtContenido = new System.Windows.Forms.TextBox();
@@ -31,7 +32,7 @@
             // 
             this.dgvHistorial.AllowUserToAddRows = false;
             this.dgvHistorial.AllowUserToDeleteRows = false;
-            this.dgvHistorial.BackgroundColor = System.Drawing.Color.AliceBlue;
+            this.dgvHistorial.BackgroundColor = System.Drawing.Color.Snow;
             this.dgvHistorial.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvHistorial.Location = new System.Drawing.Point(20, 20);
             this.dgvHistorial.MultiSelect = false;
@@ -43,7 +44,9 @@
             // 
             // btnVerContenido
             // 
-            this.btnVerContenido.BackColor = System.Drawing.Color.AliceBlue;
+            this.btnVerContenido.BackColor = System.Drawing.Color.Snow;
+            this.btnVerContenido.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
+            this.btnVerContenido.ForeColor = System.Drawing.Color.MidnightBlue;
             this.btnVerContenido.Location = new System.Drawing.Point(540, 20);
             this.btnVerContenido.Name = "btnVerContenido";
             this.btnVerContenido.Size = new System.Drawing.Size(150, 30);
@@ -54,7 +57,7 @@
             // 
             // txtContenido
             // 
-            this.txtContenido.BackColor = System.Drawing.Color.AliceBlue;
+            this.txtContenido.BackColor = System.Drawing.Color.Snow;
             this.txtContenido.Location = new System.Drawing.Point(20, 290);
             this.txtContenido.Multiline = true;
             this.txtContenido.Name = "txtContenido";
@@ -70,7 +73,11 @@
             this.Controls.Add(this.txtContenido);
             this.Controls.Add(this.btnVerContenido);
             this.Controls.Add(this.dgvHistorial);
-            this.Font = new System.Drawing.Font("Segoe UI", 8.25F);
+            this.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "FormHistorial";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Historial de archivos procesados";

@@ -1,0 +1,6 @@
+﻿°°°°tipo°°de°°tarjeta°°:°°visa°credito°°°°
+////num//de//tarjeta//://0101//5534//0233//9231////
+----fecha--de--validacion--:--12--/--25----
+----fecha--de--vencimiento--:--07--/--38----
+<<<<titular>>de<<la>>tarjeta<<:>>Joel<<Ninaja>>>>
+====cvv==:==078====

@@ -30,3 +30,15 @@ C:\Users\Shandeé Incapuiño\Downloads\proyectoVSMB-main (2)\proyectoVSMB-main\a
 C:\Users\Shandeé Incapuiño\Downloads\proyectoVSMB-main (2)\proyectoVSMB-main\app\0.4.0-alpha\0.4.0\obj\Debug\0.4.0.csproj.CoreCompileInputs.cache
 C:\Users\Shandeé Incapuiño\Downloads\proyectoVSMB-main (2)\proyectoVSMB-main\app\0.4.0-alpha\0.4.0\obj\Debug\0.4.0.exe
 C:\Users\Shandeé Incapuiño\Downloads\proyectoVSMB-main (2)\proyectoVSMB-main\app\0.4.0-alpha\0.4.0\obj\Debug\0.4.0.pdb
+C:\Users\bruno\Desktop\proyectoVSMB\app\Comparador de Archivos 2.0\0.4.0-alpha\0.4.0\bin\Debug\0.4.0.exe.config
+C:\Users\bruno\Desktop\proyectoVSMB\app\Comparador de Archivos 2.0\0.4.0-alpha\0.4.0\bin\Debug\0.4.0.exe
+C:\Users\bruno\Desktop\proyectoVSMB\app\Comparador de Archivos 2.0\0.4.0-alpha\0.4.0\bin\Debug\0.4.0.pdb
+C:\Users\bruno\Desktop\proyectoVSMB\app\Comparador de Archivos 2.0\0.4.0-alpha\0.4.0\obj\Debug\0.4.0.csproj.AssemblyReference.cache
+C:\Users\bruno\Desktop\proyectoVSMB\app\Comparador de Archivos 2.0\0.4.0-alpha\0.4.0\obj\Debug\0.4.0.exe.config
+C:\Users\bruno\Desktop\proyectoVSMB\app\Comparador de Archivos 2.0\0.4.0-alpha\0.4.0\obj\Debug\_0._4._0.Form1.resources
+C:\Users\bruno\Desktop\proyectoVSMB\app\Comparador de Archivos 2.0\0.4.0-alpha\0.4.0\obj\Debug\_0._4._0.FormHistorial.resources
+C:\Users\bruno\Desktop\proyectoVSMB\app\Comparador de Archivos 2.0\0.4.0-alpha\0.4.0\obj\Debug\_0._4._0.Properties.Resources.resources
+C:\Users\bruno\Desktop\proyectoVSMB\app\Comparador de Archivos 2.0\0.4.0-alpha\0.4.0\obj\Debug\0.4.0.csproj.GenerateResource.cache
+C:\Users\bruno\Desktop\proyectoVSMB\app\Comparador de Archivos 2.0\0.4.0-alpha\0.4.0\obj\Debug\0.4.0.csproj.CoreCompileInputs.cache
+C:\Users\bruno\Desktop\proyectoVSMB\app\Comparador de Archivos 2.0\0.4.0-alpha\0.4.0\obj\Debug\0.4.0.exe
+C:\Users\bruno\Desktop\proyectoVSMB\app\Comparador de Archivos 2.0\0.4.0-alpha\0.4.0\obj\Debug\0.4.0.pdb

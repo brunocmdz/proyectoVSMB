@@ -1,0 +1,5 @@
+﻿°°°°tipo°°de°°tarjeta°°:°°mastercard°°debito°°°°
+////num//de//tarjeta//://0606//5533//8141//0231////
+____fechas_validas__:__09__25__11__39____
+<<<<titular>>de<<la>>tarjeta<<:>>juan<<lopez<<<<
+====codigo==de==seguridad==:==022====

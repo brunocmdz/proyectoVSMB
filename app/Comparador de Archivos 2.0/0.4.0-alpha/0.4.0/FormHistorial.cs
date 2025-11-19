@@ -7,20 +7,16 @@ namespace _0._4._0
 {
     public partial class FormHistorial : Form
     {
-        // 🔥 Ahora connectionString es dinámico
         private string connectionString;
 
         public FormHistorial()
         {
             InitializeComponent();
-
             connectionString = DetectarServidorSQL();
             CargarHistorial();
         }
 
-        // ---------------------------------------------------------------
-        // 🔍 FUNCION QUE DETECTA AUTOMÁTICAMENTE EL SERVIDOR DISPONIBLE
-        // ---------------------------------------------------------------
+        // FUNCION QUE DETECTA AUTOMÁTICAMENTE EL SERVIDOR DISPONIBLE
         private string DetectarServidorSQL()
         {
             // Lista de servidores que suelen existir en cualquier PC
@@ -41,12 +37,12 @@ namespace _0._4._0
                     using (SqlConnection con = new SqlConnection(cs))
                     {
                         con.Open();
-                        return cs; // ✔ Si funciona, usar este
+                        return cs; // Si funciona, usar este
                     }
                 }
                 catch
                 {
-                    // ❌ si falla, intenta el siguiente
+                    // si falla, intenta el siguiente
                 }
             }
 
@@ -62,9 +58,7 @@ namespace _0._4._0
             return "";
         }
 
-        // ---------------------------------------------------------------
-        // 🔄 CARGAR HISTORIAL DE LA BASE DE DATOS
-        // ---------------------------------------------------------------
+        // CARGAR HISTORIAL DE LA BASE DE DATOS
         private void CargarHistorial()
         {
             if (string.IsNullOrEmpty(connectionString)) return;
@@ -83,10 +77,7 @@ namespace _0._4._0
                 }
             }
         }
-
-        // ---------------------------------------------------------------
-        // 📄 VER EL CONTENIDO DE UN ARCHIVO
-        // ---------------------------------------------------------------
+        //  VER EL CONTENIDO DE UN ARCHIVO
         private void btnVerContenido_Click(object sender, EventArgs e)
         {
             if (string.IsNullOrEmpty(connectionString)) return;
