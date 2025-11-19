@@ -1,0 +1,5 @@
+tipo de tarjeta: 
+num de tarjeta: 
+fechas validas: 09     25  11     39
+titular: juan  lopez
+codigo de seguridad: 

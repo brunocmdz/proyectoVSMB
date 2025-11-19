@@ -1,0 +1,32 @@
+C:\Users\Victor\source\proyecto\0.4.0-alpha\0.4.0\bin\Debug\0.4.0.exe.config
+C:\Users\Victor\source\proyecto\0.4.0-alpha\0.4.0\bin\Debug\0.4.0.exe
+C:\Users\Victor\source\proyecto\0.4.0-alpha\0.4.0\bin\Debug\0.4.0.pdb
+C:\Users\Victor\source\proyecto\0.4.0-alpha\0.4.0\obj\Debug\0.4.0.csproj.AssemblyReference.cache
+C:\Users\Victor\source\proyecto\0.4.0-alpha\0.4.0\obj\Debug\_0._4._0.Form1.resources
+C:\Users\Victor\source\proyecto\0.4.0-alpha\0.4.0\obj\Debug\_0._4._0.Properties.Resources.resources
+C:\Users\Victor\source\proyecto\0.4.0-alpha\0.4.0\obj\Debug\0.4.0.csproj.GenerateResource.cache
+C:\Users\Victor\source\proyecto\0.4.0-alpha\0.4.0\obj\Debug\0.4.0.csproj.CoreCompileInputs.cache
+C:\Users\Victor\source\proyecto\0.4.0-alpha\0.4.0\obj\Debug\0.4.0.exe
+C:\Users\Victor\source\proyecto\0.4.0-alpha\0.4.0\obj\Debug\0.4.0.pdb
+C:\xampp\htdocs\proyectoVSMB-main\app\0.4.0-alpha\0.4.0\obj\Debug\0.4.0.csproj.AssemblyReference.cache
+C:\xampp\htdocs\proyectoVSMB-main\app\0.4.0-alpha\0.4.0\obj\Debug\_0._4._0.Properties.Resources.resources
+C:\xampp\htdocs\proyectoVSMB-main\app\0.4.0-alpha\0.4.0\obj\Debug\0.4.0.csproj.GenerateResource.cache
+C:\xampp\htdocs\proyectoVSMB-main\app\0.4.0-alpha\0.4.0\obj\Debug\0.4.0.csproj.CoreCompileInputs.cache
+C:\xampp\htdocs\proyectoVSMB-main\app\0.4.0-alpha\0.4.0\obj\Debug\0.4.0.exe
+C:\xampp\htdocs\proyectoVSMB-main\app\0.4.0-alpha\0.4.0\obj\Debug\0.4.0.pdb
+C:\xampp\htdocs\proyectoVSMB-main\app\0.4.0-alpha\0.4.0\bin\Debug\0.4.0.exe.config
+C:\xampp\htdocs\proyectoVSMB-main\app\0.4.0-alpha\0.4.0\bin\Debug\0.4.0.exe
+C:\xampp\htdocs\proyectoVSMB-main\app\0.4.0-alpha\0.4.0\bin\Debug\0.4.0.pdb
+C:\xampp\htdocs\proyectoVSMB-main\app\0.4.0-alpha\0.4.0\obj\Debug\_0._4._0.Form1.resources
+C:\xampp\htdocs\proyectoVSMB-main\app\0.4.0-alpha\0.4.0\obj\Debug\_0._4._0.FormHistorial.resources
+C:\Users\Shandeé Incapuiño\Desktop\proyectoVSMB-main\app\0.4.0-alpha\0.4.0\bin\Debug\0.4.0.exe.config
+C:\Users\Shandeé Incapuiño\Desktop\proyectoVSMB-main\app\0.4.0-alpha\0.4.0\bin\Debug\0.4.0.exe
+C:\Users\Shandeé Incapuiño\Desktop\proyectoVSMB-main\app\0.4.0-alpha\0.4.0\bin\Debug\0.4.0.pdb
+C:\Users\Shandeé Incapuiño\Desktop\proyectoVSMB-main\app\0.4.0-alpha\0.4.0\obj\Debug\0.4.0.csproj.AssemblyReference.cache
+C:\Users\Shandeé Incapuiño\Desktop\proyectoVSMB-main\app\0.4.0-alpha\0.4.0\obj\Debug\_0._4._0.Form1.resources
+C:\Users\Shandeé Incapuiño\Desktop\proyectoVSMB-main\app\0.4.0-alpha\0.4.0\obj\Debug\_0._4._0.FormHistorial.resources
+C:\Users\Shandeé Incapuiño\Desktop\proyectoVSMB-main\app\0.4.0-alpha\0.4.0\obj\Debug\_0._4._0.Properties.Resources.resources
+C:\Users\Shandeé Incapuiño\Desktop\proyectoVSMB-main\app\0.4.0-alpha\0.4.0\obj\Debug\0.4.0.csproj.GenerateResource.cache
+C:\Users\Shandeé Incapuiño\Desktop\proyectoVSMB-main\app\0.4.0-alpha\0.4.0\obj\Debug\0.4.0.csproj.CoreCompileInputs.cache
+C:\Users\Shandeé Incapuiño\Desktop\proyectoVSMB-main\app\0.4.0-alpha\0.4.0\obj\Debug\0.4.0.exe
+C:\Users\Shandeé Incapuiño\Desktop\proyectoVSMB-main\app\0.4.0-alpha\0.4.0\obj\Debug\0.4.0.pdb
