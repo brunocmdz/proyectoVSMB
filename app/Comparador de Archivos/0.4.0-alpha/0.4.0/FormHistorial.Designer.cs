@@ -31,6 +31,7 @@
             // 
             this.dgvHistorial.AllowUserToAddRows = false;
             this.dgvHistorial.AllowUserToDeleteRows = false;
+            this.dgvHistorial.BackgroundColor = System.Drawing.Color.AliceBlue;
             this.dgvHistorial.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvHistorial.Location = new System.Drawing.Point(20, 20);
             this.dgvHistorial.MultiSelect = false;
@@ -38,37 +39,45 @@
             this.dgvHistorial.ReadOnly = true;
             this.dgvHistorial.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvHistorial.Size = new System.Drawing.Size(500, 250);
+            this.dgvHistorial.TabIndex = 2;
             // 
             // btnVerContenido
             // 
+            this.btnVerContenido.BackColor = System.Drawing.Color.AliceBlue;
             this.btnVerContenido.Location = new System.Drawing.Point(540, 20);
             this.btnVerContenido.Name = "btnVerContenido";
             this.btnVerContenido.Size = new System.Drawing.Size(150, 30);
             this.btnVerContenido.TabIndex = 1;
             this.btnVerContenido.Text = "Ver contenido";
-            this.btnVerContenido.UseVisualStyleBackColor = true;
+            this.btnVerContenido.UseVisualStyleBackColor = false;
             this.btnVerContenido.Click += new System.EventHandler(this.btnVerContenido_Click);
             // 
             // txtContenido
             // 
+            this.txtContenido.BackColor = System.Drawing.Color.AliceBlue;
             this.txtContenido.Location = new System.Drawing.Point(20, 290);
             this.txtContenido.Multiline = true;
+            this.txtContenido.Name = "txtContenido";
+            this.txtContenido.ReadOnly = true;
             this.txtContenido.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.txtContenido.Size = new System.Drawing.Size(670, 230);
-            this.txtContenido.ReadOnly = true;
+            this.txtContenido.TabIndex = 0;
             // 
             // FormHistorial
             // 
+            this.BackColor = System.Drawing.Color.MidnightBlue;
             this.ClientSize = new System.Drawing.Size(720, 540);
             this.Controls.Add(this.txtContenido);
             this.Controls.Add(this.btnVerContenido);
             this.Controls.Add(this.dgvHistorial);
+            this.Font = new System.Drawing.Font("Segoe UI", 8.25F);
             this.Name = "FormHistorial";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Historial de archivos procesados";
             ((System.ComponentModel.ISupportInitialize)(this.dgvHistorial)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
+
         }
 
         #endregion

@@ -31,76 +31,120 @@
             // 
             // btnCargarMadre
             // 
+            this.btnCargarMadre.BackColor = System.Drawing.Color.Snow;
+            this.btnCargarMadre.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnCargarMadre.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCargarMadre.Location = new System.Drawing.Point(20, 20);
+            this.btnCargarMadre.Name = "btnCargarMadre";
             this.btnCargarMadre.Size = new System.Drawing.Size(150, 30);
+            this.btnCargarMadre.TabIndex = 9;
             this.btnCargarMadre.Text = "Cargar Madre";
+            this.btnCargarMadre.UseVisualStyleBackColor = false;
             this.btnCargarMadre.Click += new System.EventHandler(this.btnCargarMadre_Click);
             // 
             // txtMadre
             // 
             this.txtMadre.Location = new System.Drawing.Point(20, 60);
             this.txtMadre.Multiline = true;
+            this.txtMadre.Name = "txtMadre";
             this.txtMadre.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.txtMadre.Size = new System.Drawing.Size(350, 200);
+            this.txtMadre.TabIndex = 8;
             // 
             // btnCargarComparar
             // 
+            this.btnCargarComparar.BackColor = System.Drawing.Color.AliceBlue;
+            this.btnCargarComparar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnCargarComparar.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCargarComparar.Location = new System.Drawing.Point(400, 20);
+            this.btnCargarComparar.Name = "btnCargarComparar";
             this.btnCargarComparar.Size = new System.Drawing.Size(150, 30);
+            this.btnCargarComparar.TabIndex = 7;
             this.btnCargarComparar.Text = "Cargar Nuevo";
+            this.btnCargarComparar.UseVisualStyleBackColor = false;
             this.btnCargarComparar.Click += new System.EventHandler(this.btnCargarComparar_Click);
             // 
             // txtComparar
             // 
             this.txtComparar.Location = new System.Drawing.Point(400, 60);
             this.txtComparar.Multiline = true;
+            this.txtComparar.Name = "txtComparar";
             this.txtComparar.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.txtComparar.Size = new System.Drawing.Size(350, 200);
+            this.txtComparar.TabIndex = 6;
             // 
             // btnComparar
             // 
+            this.btnComparar.BackColor = System.Drawing.Color.AliceBlue;
+            this.btnComparar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnComparar.Location = new System.Drawing.Point(20, 280);
+            this.btnComparar.Name = "btnComparar";
             this.btnComparar.Size = new System.Drawing.Size(150, 30);
+            this.btnComparar.TabIndex = 5;
             this.btnComparar.Text = "Comparar";
+            this.btnComparar.UseVisualStyleBackColor = false;
             this.btnComparar.Click += new System.EventHandler(this.btnComparar_Click);
             // 
             // btnCorregir
             // 
+            this.btnCorregir.BackColor = System.Drawing.Color.AliceBlue;
+            this.btnCorregir.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnCorregir.Location = new System.Drawing.Point(180, 280);
+            this.btnCorregir.Name = "btnCorregir";
             this.btnCorregir.Size = new System.Drawing.Size(180, 30);
+            this.btnCorregir.TabIndex = 4;
             this.btnCorregir.Text = "Generar Corrección";
+            this.btnCorregir.UseVisualStyleBackColor = false;
             this.btnCorregir.Click += new System.EventHandler(this.btnCorregir_Click);
             // 
             // txtResultado
             // 
             this.txtResultado.Location = new System.Drawing.Point(20, 330);
             this.txtResultado.Multiline = true;
+            this.txtResultado.Name = "txtResultado";
             this.txtResultado.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.txtResultado.Size = new System.Drawing.Size(730, 200);
+            this.txtResultado.TabIndex = 3;
             // 
             // btnGuardar
             // 
+            this.btnGuardar.BackColor = System.Drawing.Color.AliceBlue;
+            this.btnGuardar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnGuardar.Location = new System.Drawing.Point(370, 280);
+            this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(120, 30);
+            this.btnGuardar.TabIndex = 2;
             this.btnGuardar.Text = "Guardar";
+            this.btnGuardar.UseVisualStyleBackColor = false;
             this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
             // btnLimpiar
             // 
+            this.btnLimpiar.BackColor = System.Drawing.Color.AliceBlue;
+            this.btnLimpiar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnLimpiar.Location = new System.Drawing.Point(500, 280);
+            this.btnLimpiar.Name = "btnLimpiar";
             this.btnLimpiar.Size = new System.Drawing.Size(120, 30);
+            this.btnLimpiar.TabIndex = 1;
             this.btnLimpiar.Text = "Limpiar";
+            this.btnLimpiar.UseVisualStyleBackColor = false;
             this.btnLimpiar.Click += new System.EventHandler(this.btnLimpiar_Click);
             // 
             // btnHistorial
             // 
+            this.btnHistorial.BackColor = System.Drawing.Color.AliceBlue;
+            this.btnHistorial.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnHistorial.Location = new System.Drawing.Point(630, 280);
+            this.btnHistorial.Name = "btnHistorial";
             this.btnHistorial.Size = new System.Drawing.Size(120, 30);
+            this.btnHistorial.TabIndex = 0;
             this.btnHistorial.Text = "Historial";
+            this.btnHistorial.UseVisualStyleBackColor = false;
             this.btnHistorial.Click += new System.EventHandler(this.btnHistorial_Click);
             // 
             // Form1
             // 
+            this.BackColor = System.Drawing.Color.MidnightBlue;
             this.ClientSize = new System.Drawing.Size(780, 550);
             this.Controls.Add(this.btnHistorial);
             this.Controls.Add(this.btnLimpiar);
@@ -112,9 +156,13 @@
             this.Controls.Add(this.btnCargarComparar);
             this.Controls.Add(this.txtMadre);
             this.Controls.Add(this.btnCargarMadre);
+            this.Cursor = System.Windows.Forms.Cursors.Default;
+            this.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Name = "Form1";
             this.Text = "Comparador de Archivos";
             this.ResumeLayout(false);
             this.PerformLayout();
+
         }
 
         #endregion

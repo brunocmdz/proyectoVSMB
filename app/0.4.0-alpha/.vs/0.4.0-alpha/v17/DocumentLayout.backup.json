@@ -1,17 +1,13 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\Et26\\Desktop\\proyectoVSMB\\app\\0.4.0-alpha\\",
+  "WorkspaceRootPath": "C:\\Users\\bruno\\Desktop\\proyectoVSMB\\app\\0.4.0-alpha\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{50786ED6-A9B1-4351-8EFD-49BB4971B1AE}|0.4.0\\0.4.0.csproj|c:\\users\\et26\\desktop\\proyectovsmb\\app\\0.4.0-alpha\\0.4.0\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{50786ED6-A9B1-4351-8EFD-49BB4971B1AE}|0.4.0\\0.4.0.csproj|c:\\users\\bruno\\desktop\\proyectovsmb\\app\\0.4.0-alpha\\0.4.0\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{50786ED6-A9B1-4351-8EFD-49BB4971B1AE}|0.4.0\\0.4.0.csproj|solutionrelative:0.4.0\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{50786ED6-A9B1-4351-8EFD-49BB4971B1AE}|0.4.0\\0.4.0.csproj|c:\\users\\et26\\desktop\\proyectovsmb\\app\\0.4.0-alpha\\0.4.0\\form1.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{50786ED6-A9B1-4351-8EFD-49BB4971B1AE}|0.4.0\\0.4.0.csproj|solutionrelative:0.4.0\\form1.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{50786ED6-A9B1-4351-8EFD-49BB4971B1AE}|0.4.0\\0.4.0.csproj|C:\\Users\\Et26\\Desktop\\proyectoVSMB\\app\\0.4.0-alpha\\0.4.0\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{50786ED6-A9B1-4351-8EFD-49BB4971B1AE}|0.4.0\\0.4.0.csproj|C:\\Users\\bruno\\Desktop\\proyectoVSMB\\app\\0.4.0-alpha\\0.4.0\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{50786ED6-A9B1-4351-8EFD-49BB4971B1AE}|0.4.0\\0.4.0.csproj|solutionrelative:0.4.0\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     }
   ],
@@ -22,45 +18,36 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 2,
           "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
+            },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "Form1.Designer.cs",
-              "DocumentMoniker": "C:\\Users\\Et26\\Desktop\\proyectoVSMB\\app\\0.4.0-alpha\\0.4.0\\Form1.Designer.cs",
-              "RelativeDocumentMoniker": "0.4.0\\Form1.Designer.cs",
-              "ToolTip": "C:\\Users\\Et26\\Desktop\\proyectoVSMB\\app\\0.4.0-alpha\\0.4.0\\Form1.Designer.cs",
-              "RelativeToolTip": "0.4.0\\Form1.Designer.cs",
-              "ViewState": "AgIAAEQBAAAAAAAAAADwv0gBAAAXAAAAAAAAAA==",
+              "Title": "Form1.cs [Dise\u00F1o]",
+              "DocumentMoniker": "C:\\Users\\bruno\\Desktop\\proyectoVSMB\\app\\0.4.0-alpha\\0.4.0\\Form1.cs",
+              "RelativeDocumentMoniker": "0.4.0\\Form1.cs",
+              "ToolTip": "C:\\Users\\bruno\\Desktop\\proyectoVSMB\\app\\0.4.0-alpha\\0.4.0\\Form1.cs [Dise\u00F1o]",
+              "RelativeToolTip": "0.4.0\\Form1.cs [Dise\u00F1o]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-17T18:18:45.252Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-19T00:08:00.306Z",
+              "EditorCaption": " [Dise\u00F1o]"
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
               "Title": "Form1.cs",
-              "DocumentMoniker": "C:\\Users\\Et26\\Desktop\\proyectoVSMB\\app\\0.4.0-alpha\\0.4.0\\Form1.cs",
+              "DocumentMoniker": "C:\\Users\\bruno\\Desktop\\proyectoVSMB\\app\\0.4.0-alpha\\0.4.0\\Form1.cs",
               "RelativeDocumentMoniker": "0.4.0\\Form1.cs",
-              "ToolTip": "C:\\Users\\Et26\\Desktop\\proyectoVSMB\\app\\0.4.0-alpha\\0.4.0\\Form1.cs*",
-              "RelativeToolTip": "0.4.0\\Form1.cs*",
-              "ViewState": "AgIAAB8BAAAAAAAAAADwv0YBAAABAAAAAAAAAA==",
+              "ToolTip": "C:\\Users\\bruno\\Desktop\\proyectoVSMB\\app\\0.4.0-alpha\\0.4.0\\Form1.cs",
+              "RelativeToolTip": "0.4.0\\Form1.cs",
+              "ViewState": "AgIAAO0AAAAAAAAAAAAwwDcBAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-11-11T03:36:35.873Z",
               "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "Form1.cs [Dise\u00F1o]",
-              "DocumentMoniker": "C:\\Users\\Et26\\Desktop\\proyectoVSMB\\app\\0.4.0-alpha\\0.4.0\\Form1.cs",
-              "RelativeDocumentMoniker": "0.4.0\\Form1.cs",
-              "ToolTip": "C:\\Users\\Et26\\Desktop\\proyectoVSMB\\app\\0.4.0-alpha\\0.4.0\\Form1.cs [Dise\u00F1o]*",
-              "RelativeToolTip": "0.4.0\\Form1.cs [Dise\u00F1o]*",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-11T03:33:24.544Z",
-              "EditorCaption": " [Dise\u00F1o]"
             }
           ]
         }
