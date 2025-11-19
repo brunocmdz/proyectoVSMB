@@ -54,6 +54,8 @@
             this.labelArrastrarAM = new System.Windows.Forms.Label();
             this.historialBTN = new System.Windows.Forms.Button();
             this.buttonClean = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
             this.panelACR.SuspendLayout();
             this.panelAC.SuspendLayout();
             this.panelAM.SuspendLayout();
@@ -344,12 +346,35 @@
             this.buttonClean.UseVisualStyleBackColor = true;
             this.buttonClean.Click += new System.EventHandler(this.buttonClean_Click);
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Leelawadee UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(12, 9);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(164, 30);
+            this.label1.TabIndex = 26;
+            this.label1.Text = "COMPARADOR";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Leelawadee UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.Color.DeepSkyBlue;
+            this.label5.Location = new System.Drawing.Point(169, 9);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(72, 30);
+            this.label5.TabIndex = 27;
+            this.label5.Text = "VSMB";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.MidnightBlue;
             this.ClientSize = new System.Drawing.Size(1202, 786);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.buttonClean);
             this.Controls.Add(this.historialBTN);
             this.Controls.Add(this.descargarBTN);
@@ -407,5 +432,7 @@
         private System.Windows.Forms.Label labelArrastrarAM;
         private System.Windows.Forms.Button historialBTN; // Nueva propiedad añadida
         private System.Windows.Forms.Button buttonClean;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label5;
     }
 }
