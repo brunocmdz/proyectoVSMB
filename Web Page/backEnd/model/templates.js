@@ -1,14 +1,9 @@
 const sequelize = require('../config/database');
 const { DataTypes } = require('sequelize');
 
-const User = sequelize.define('User',
+const Template = sequelize.define('Template',
     {
-        id_usuario: {
-        type: DataTypes.INTEGER,
-        autoIncrement: true,
-        primaryKey: true
-        },
-        email: {
+        content: {
             type: DataTypes.STRING,
             unique: true,
             allowNull: false,
@@ -16,11 +11,11 @@ const User = sequelize.define('User',
                 isEmail: true
             }
         },
-        password: {
+        versionTemplate: {
             type: DataTypes.STRING,
             allowNull: false
         },
-        firstName: {
+        nameTemplate: {
             type: DataTypes.STRING,
             allowNull: false
         },
@@ -28,19 +23,16 @@ const User = sequelize.define('User',
             type: DataTypes.STRING,
             allowNull: false
         },
-        state: {
-            type: DataTypes.BOOLEAN,
-        },
-        isAdmin: {
-            type: DataTypes.BOOLEAN,
-            allowNull: false,
-            defaultValue: false
+        idPlantilla: {
+            type: DataTypes.INTEGER,
+            autoIncrement: true,
+            primaryKey: true
         }
     },
     {
-        tableName: 'User',
+        tableName: 'Template',
         timestamps: false
     }
 )
 
-module.exports = User;
+module.exports = Templates;
