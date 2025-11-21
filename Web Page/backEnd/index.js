@@ -1,3 +1,8 @@
+require("./model/user");
+require("./model/templates");
+require("./model/record");
+require("./model/notifications");
+
 const express = require('express');
 const app = express();
 const port = 3000;

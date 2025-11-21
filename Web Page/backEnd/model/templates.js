@@ -5,11 +5,7 @@ const Template = sequelize.define('Template',
     {
         content: {
             type: DataTypes.STRING,
-            unique: true,
             allowNull: false,
-            validate: {
-                isEmail: true
-            }
         },
         versionTemplate: {
             type: DataTypes.STRING,
@@ -35,4 +31,4 @@ const Template = sequelize.define('Template',
     }
 )
 
-module.exports = Templates;
+module.exports = Template;

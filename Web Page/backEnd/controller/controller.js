@@ -1,4 +1,7 @@
 const User = require('../model/user');
+const Template = require('../model/templates');
+const Record = require('../model/record');
+const Notification = require('../model/notifications');
 
 const editUser = async(req, res) => {
     try {
