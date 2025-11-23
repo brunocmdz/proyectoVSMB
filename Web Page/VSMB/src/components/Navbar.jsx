@@ -2,22 +2,25 @@ import './styles/navbar.css';
 import { useEffect, useState } from 'react';
 import UserModal from './UserModal'; 
 
-function Navbar({ onRegisterClick, onLoginClick, onHomeClick }) {
+function Navbar({ onRegisterClick, onLoginClick, onHomeClick, onAdminClick }) {
   const [userName, setUserName] = useState('');
   const [lastName, setLastName] = useState('');
   const [userId, setUserId] = useState('');
   const [userEmail, setUserEmail] = useState('');
   const [mostrarModal, setMostrarModal] = useState(false);
+  const [isAdmin, setIsAdmin] = useState(false);
 
   useEffect(() => {
     const name = localStorage.getItem("userName");
     const lastName = localStorage.getItem("userLastName");
     const id = localStorage.getItem("userId");
     const email = localStorage.getItem("userEmail");
+    const adminFlag = localStorage.getItem("isAdmin");
     if (name) setUserName(name);
     if (lastName) setLastName(lastName);
     if (id) setUserId(id);
     if (email) setUserEmail(email);
+    if (adminFlag === 'true' || adminFlag === '1') setIsAdmin(true);
   }, []);
 
   return (
@@ -29,9 +32,14 @@ function Navbar({ onRegisterClick, onLoginClick, onHomeClick }) {
         <div className='auth-buttons'>
           <div id='login_btns'>
             {userName ? (
-              <span className="estado-logeado" onClick={() => setMostrarModal(true)}>
-                 Hola, {userName} {lastName}
-              </span>
+              <>
+                <span className="estado-logeado" onClick={() => setMostrarModal(true)}>
+                   Hola, {userName} {lastName}
+                </span>
+                {isAdmin && (
+                  <button className='menu-item' onClick={onAdminClick} id='admin'>Panel Admin</button>
+                )}
+              </>
             ) : (
               <>
                 <button className='menu-item' onClick={onLoginClick} id='login'>Iniciar Sesión</button>

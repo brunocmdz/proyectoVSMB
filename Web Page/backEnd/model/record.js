@@ -17,7 +17,7 @@ const Record = sequelize.define('Record',
             allowNull: false
         },
         userId: {
-            type: DataTypes.STRING,
+            type: DataTypes.INTEGER,
             allowNull: false
         },
     },

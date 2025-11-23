@@ -1,19 +1,27 @@
-import User from '../model/user.js'; 
+const User = require('../model/user');
 
-export const isAuth = async (req, res, next) => {
+const isAuth = async (req, res, next) => {
   const authHeader = req.headers['authorization'];
 
   if (!authHeader) {
-    return res.status(401).json({ message: "No existe id" });
+    return res.status(401).json({ message: 'No existe id' });
   }
-  const user = await User.findByPk(authHeader);
-  if (!user) {
-    return res.status(403).json({ message: "Usuario no válido" });
+
+  try {
+    const user = await User.findByPk(authHeader);
+    if (!user) {
+      return res.status(403).json({ message: 'Usuario no válido' });
+    }
+    // adjuntar usuario a la request para middlewares posteriores
+    req.user = user;
+    next();
+  } catch (err) {
+    console.error('Error en isAuth:', err);
+    return res.status(500).json({ message: 'Error interno del servidor' });
   }
-  next();
 };
 
-export const isAdmin = (req, res, next) => {
+const isAdmin = (req, res, next) => {
   const user = req.user;
   if (user && user.isAdmin) {
     next();
@@ -21,3 +29,5 @@ export const isAdmin = (req, res, next) => {
     res.status(401).send('No es admin');
   }
 };
+
+module.exports = { isAuth, isAdmin };

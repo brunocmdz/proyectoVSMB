@@ -4,6 +4,7 @@ import HomePublic from './components/HomePublic';
 import HomePrivate from './components/HomePrivate';
 import Login from './components/Login';
 import Register from './components/Register';
+import AdminPanel from './components/AdminPanel';
 import { useState, useEffect } from 'react';
 
 function App() {
@@ -22,6 +23,8 @@ function App() {
     content = <Register />;
   } else if (view === 'login') {
     content = <Login />;
+  } else if (view === 'admin') {
+    content = <AdminPanel />;
   }
 
   return (
@@ -30,6 +33,7 @@ function App() {
         onRegisterClick={() => setView('register')}
         onLoginClick={() => setView('login')}
         onHomeClick={() => setView('home')}
+        onAdminClick={() => setView('admin')}
       />
       <main className="content">
         {content}

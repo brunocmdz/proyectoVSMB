@@ -62,10 +62,11 @@ async function login(req, res) {
     }
 
     res.json({
-        id: user.id,
-        firstName: user.firstName,
-        lastName: user.lastName,
-        email: user.email
+                id: user.id_usuario,
+                firstName: user.firstName,
+                lastName: user.lastName,
+                email: user.email,
+                isAdmin: user.isAdmin
     });
   } catch (err) {
     console.error("Error al obtener los usuarios:", err);
