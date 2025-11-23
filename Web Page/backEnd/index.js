@@ -27,7 +27,7 @@ app.get('/users', isAuth, isAdmin, getUser);
 app.get('/users/:email', getUserByEmail);
 app.post('/users/regist/',registerUser);
 app.post('/users/login/', login);
-app.post('/users/editUser/',isAuth, editUser);
+app.post('/users/editUser/', editUser);
 app.put('/users/state', isAuth, isAdmin, setUserState);
 
 app.listen(port, async() => {

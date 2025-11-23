@@ -5,15 +5,15 @@ const Notification = require('../model/notifications');
 
 const editUser = async(req, res) => {
     try {
-        const { email, firstName, lastName, id } = req.query;
+        const {firstName, lastName,  id_usuario } = req.query;
         const users = await User.update(
-            { firstName, lastName, email },
-            { where: { id } }
+            { firstName, lastName },
+            { where: { id_usuario } }
         );
         res.json(users);
     } catch (err) {
         console.error('Error al obtener los usuarios:', err);
-        res.status(500).json({ message: 'Error interno del servidor', error });
+        res.status(500).json({ message: 'Error interno del servidor', error: err.message });
     }
 };
 const getUser = async(_req, res) => {
@@ -22,7 +22,7 @@ const getUser = async(_req, res) => {
         res.json(users);
     } catch (err) {
         console.error('Error al obtener los usuarios:', err);
-        res.status(500).json({ message: 'Error interno del servidor', error });
+        res.status(500).json({ message: 'Error interno del servidor', error: err.message });
     }
 };
 const getUserByEmail = async(req, res) => {
@@ -34,7 +34,7 @@ const getUserByEmail = async(req, res) => {
         res.json(users);
     } catch (err) {
         console.error('Error al obtener los usuarios:', err);
-        res.status(500).json({ message: 'Error interno del servidor', error });
+        res.status(500).json({ message: 'Error interno del servidor', error: err.message });
     }
 };
 const setUserState = async (req, res) => {
@@ -75,7 +75,7 @@ async function registerUser(req, res) {
         res.json(users);
     } catch (err) {
         console.error('Error al obtener los usuarios:', err);
-        res.status(500).json({ message: 'Error interno del servidor', error });
+        res.status(500).json({ message: 'Error interno del servidor', error: err.message });
     }
 };
 async function login(req, res) {
