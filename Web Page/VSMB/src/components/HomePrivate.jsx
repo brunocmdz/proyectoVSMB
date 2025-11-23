@@ -1,8 +1,7 @@
 import './styles/homePrivate.css';
 import axios from 'axios';
-import img from '../assets/imagenmuimportante.png';
 
-function HomePrivate({ onRegisterClick }) {
+function HomePrivate() {
   return (
     <div className="home-private-container">
       <div className="home-private-section">
