@@ -1,0 +1,25 @@
+.admin-users-table {
+    width: 80%;
+    margin: 0 auto;
+    padding: 50px 0;
+    table-layout: fixed; /* mantiene columnas alineadas */
+}
+
+.admin-users-table th,
+.admin-users-table td {
+    padding: 12px 20px;
+    border-bottom: 1px solid #ddd;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+.admin-users-table th {
+    border-bottom: 2px solid #ddd;
+    font-weight: 600;
+}
+
+/* Opcional: define anchos por columna si quieres (requiere <colgroup> en el HTML para ser efectivo) */
+.admin-users-table col:nth-child(1) { width: 30%; }
+.admin-users-table col:nth-child(2) { width: 40%; }
+.admin-users-table col:nth-child(3) { width: 30%; }
+  

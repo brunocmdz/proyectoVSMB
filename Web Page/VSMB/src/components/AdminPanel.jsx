@@ -1,4 +1,6 @@
 import './styles/homePrivate.css';
+import './styles/AdminPanel.css';
+
 import { useEffect, useState } from 'react';
 import axios from 'axios';
 
@@ -30,8 +32,6 @@ function AdminPanel() {
   if (error) return <div>{error}</div>;
 
   return (
-    <div className="admin-panel-container">
-      <h2>Panel de administradores - Lista de usuarios</h2>
       <table className="admin-users-table">
         <thead>
           <tr>
@@ -77,12 +77,14 @@ function AdminPanel() {
                 >
                   {u.state === true || u.state === 'true' ? 'Desactivar' : 'Activar'}
                 </button>
+                <button>
+                  Notificar
+                </button>
               </td>
             </tr>
           ))}
         </tbody>
       </table>
-    </div>
   );
 }
 
