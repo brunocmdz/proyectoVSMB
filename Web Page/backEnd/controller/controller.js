@@ -37,6 +37,31 @@ const getUserByEmail = async(req, res) => {
         res.status(500).json({ message: 'Error interno del servidor', error });
     }
 };
+const setUserState = async (req, res) => {
+    try {
+        const { id, state } = req.query;
+        if (typeof id === 'undefined') {
+            return res.status(400).json({ message: 'Falta id del usuario' });
+        }
+        // convertir state a boolean (acepta 'true'/'false', '1'/'0', boolean)
+        const newState = (state === 'true' || state === '1' || state === true);
+
+        const [updated] = await User.update(
+            { state: newState },
+            { where: { id_usuario: id } }
+        );
+
+        if (updated === 0) {
+            return res.status(404).json({ message: 'Usuario no encontrado o sin cambios' });
+        }
+
+        const updatedUser = await User.findOne({ where: { id_usuario: id } });
+        res.json({ message: 'Estado actualizado', user: updatedUser });
+    } catch (err) {
+        console.error('Error actualizando estado de usuario:', err);
+        res.status(500).json({ message: 'Error interno del servidor' });
+    }
+};
 async function registerUser(req, res) {
     try {
         const { email, password, firstName, lastName } = req.query;
@@ -44,7 +69,8 @@ async function registerUser(req, res) {
             email,
             password,
             firstName,
-            lastName
+                        lastName,
+                        state: true
         });
         res.json(users);
     } catch (err) {
@@ -61,6 +87,11 @@ async function login(req, res) {
       return res.status(401).json({ message: "Credenciales inválidas" });
     }
 
+        // impedir login si el usuario está desactivado
+        if (user.state === false || user.state === 'false' || user.state === 0) {
+            return res.status(403).json({ message: 'Usuario desactivado' });
+        }
+
     res.json({
                 id: user.id_usuario,
                 firstName: user.firstName,
@@ -73,5 +104,5 @@ async function login(req, res) {
     res.status(500).json({ message: "Error interno del servidor", err });
   }
 };
-module.exports = { getUser, registerUser, getUserByEmail, login, editUser };
+module.exports = { getUser, registerUser, getUserByEmail, login, editUser, setUserState };
 

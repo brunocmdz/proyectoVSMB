@@ -39,7 +39,8 @@ function AdminPanel() {
             <th>Nombre</th>
             <th>Apellido</th>
             <th>Email</th>
-            <th>isAdmin</th>
+            <th>Estado</th>
+            <th>Acciones</th>
           </tr>
         </thead>
         <tbody>
@@ -49,7 +50,34 @@ function AdminPanel() {
               <td>{u.firstName}</td>
               <td>{u.lastName}</td>
               <td>{u.email}</td>
-              <td>{String(u.isAdmin)}</td>
+              <td>{String(u.state === true || u.state === 'true' ? 'Activo' : 'Inactivo')}</td>
+              <td>
+                <button
+                  onClick={async () => {
+                    const id = u.id_usuario || u.id;
+                    const current = u.state === true || u.state === 'true';
+                    const confirmMsg = current
+                      ? `Confirmá que querés DESACTIVAR al usuario ${u.email}`
+                      : `Confirmá que querés ACTIVAR al usuario ${u.email}`;
+                    if (!window.confirm(confirmMsg)) return;
+                    try {
+                      const userId = localStorage.getItem('userId');
+                      const res = await axios.put('http://localhost:3000/users/state', null, {
+                        params: { id, state: !current },
+                        headers: { Authorization: userId }
+                      });
+                      // actualizar la lista localmente
+                      setUsers((prev) => prev.map((p) => (p.id_usuario === id || p.id === id ? res.data.user : p)));
+                      alert(res.data.message || 'Estado actualizado');
+                    } catch (err) {
+                      console.error('Error cambiando estado:', err);
+                      alert('No se pudo cambiar el estado');
+                    }
+                  }}
+                >
+                  {u.state === true || u.state === 'true' ? 'Desactivar' : 'Activar'}
+                </button>
+              </td>
             </tr>
           ))}
         </tbody>
