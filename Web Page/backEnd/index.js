@@ -7,7 +7,7 @@ const express = require('express');
 const app = express();
 const port = 3000;
 const sequelize = require('./config/database');
-const { editUser, getUser, registerUser, getUserByEmail, login, setUserState } = require('./controller/controller');
+const { editUser, getUser, registerUser, getUserByEmail, login, setUserState, getTemplates, uploadTemplate, deleteTemplate } = require('./controller/controller');
 const { isAuth, isAdmin } = require('./midlewares/auth');
 
 app.use(express.json());
@@ -29,6 +29,12 @@ app.post('/users/regist/',registerUser);
 app.post('/users/login/', login);
 app.post('/users/editUser/', editUser);
 app.put('/users/state', isAuth, isAdmin, setUserState);
+
+// Plantillas
+app.get('/templates', isAuth, isAdmin, getTemplates);
+// NOTE: Accepts JSON with { nameTemplate, versionTemplate, content }
+app.post('/templates/upload', isAuth, isAdmin, uploadTemplate);
+app.delete('/templates/:id', isAuth, isAdmin, deleteTemplate);
 
 app.listen(port, async() => {
     await sequelize.sync({force: false});

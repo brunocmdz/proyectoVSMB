@@ -37,6 +37,49 @@ const getUserByEmail = async(req, res) => {
         res.status(500).json({ message: 'Error interno del servidor', error: err.message });
     }
 };
+
+const getTemplates = async(_req, res) => {
+    try {
+        const templates = await Template.findAll();
+        res.json(templates);
+    } catch (err) {
+        console.error('Error al obtener las plantillas:', err);
+        res.status(500).json({ message: 'Error interno del servidor', error: err.message });
+    }
+};
+
+const uploadTemplate = async (req, res) => {
+    try {
+        // multer memory storage proporciona req.file
+        const { nameTemplate, versionTemplate, content } = req.body || {};
+        // Accept either JSON `content` or multipart file (if multer used).
+        let finalContent = content;
+        if (!finalContent && req.file && req.file.buffer) {
+            finalContent = req.file.buffer.toString('utf8');
+        }
+        if (!finalContent) {
+            return res.status(400).json({ message: 'Falta contenido de la plantilla (campo content) o archivo .txt' });
+        }
+        const tpl = await Template.create({ content: finalContent, versionTemplate, nameTemplate });
+        res.json(tpl);
+    } catch (err) {
+        console.error('Error subiendo la plantilla:', err);
+        res.status(500).json({ message: 'Error interno del servidor', error: err.message });
+    }
+};
+
+const deleteTemplate = async (req, res) => {
+    try {
+        const id = req.params.id;
+        if (!id) return res.status(400).json({ message: 'Falta id de plantilla' });
+        const deleted = await Template.destroy({ where: { idPlantilla: id } });
+        if (deleted === 0) return res.status(404).json({ message: 'Plantilla no encontrada' });
+        res.json({ message: 'Plantilla eliminada', id });
+    } catch (err) {
+        console.error('Error eliminando plantilla:', err);
+        res.status(500).json({ message: 'Error interno del servidor', error: err.message });
+    }
+};
 const setUserState = async (req, res) => {
     try {
         const { id, state } = req.query;
@@ -104,5 +147,5 @@ async function login(req, res) {
     res.status(500).json({ message: "Error interno del servidor", err });
   }
 };
-module.exports = { getUser, registerUser, getUserByEmail, login, editUser, setUserState };
+module.exports = { getUser, registerUser, getUserByEmail, login, editUser, setUserState, getTemplates, uploadTemplate, deleteTemplate };
 
