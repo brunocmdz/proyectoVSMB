@@ -4,16 +4,30 @@ import './styles/AdminPanel.css';
 import { useEffect, useState } from 'react';
 import axios from 'axios';
 
+/*
+  AdminPanel component
+  - Permite al admin ver/gestionar plantillas y usuarios.
+  - Plantillas: subir .txt (se lee en el cliente), ver preview, descargar y borrar.
+  - Usuarios: listar y activar/desactivar.
+*/
+
 function AdminPanel() {
+  // State: usuarios y plantillas
   const [users, setUsers] = useState([]);
   const [templates, setTemplates] = useState([]);
+
+  // Form state para nueva plantilla
   const [tplName, setTplName] = useState('');
   const [tplVersion, setTplVersion] = useState('1.0');
   const [tplFile, setTplFile] = useState(null);
+
+  // Estados de carga/errores
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
   useEffect(() => {
+    // Fetch inicial: usuarios y plantillas.
+    // fetchUsers: obtiene la lista de usuarios protegida por Authorization.
     const fetchUsers = async () => {
       try {
         const userId = localStorage.getItem('userId');
@@ -29,6 +43,7 @@ function AdminPanel() {
       }
     };
 
+    // fetchTemplates: lista de plantillas (preview + metadata)
     const fetchTemplates = async () => {
       try {
         const userId = localStorage.getItem('userId');
@@ -50,17 +65,24 @@ function AdminPanel() {
     <div>
       <h2>Gestion de plantillas</h2>
       <div className="templates-section">
+        {/* Formulario para subir una nueva plantilla.
+            Nota: leemos el .txt en el cliente (File.text()) y enviamos el contenido en JSON al backend.
+        */}
         <form className="templates-form" onSubmit={async (e) => {
           e.preventDefault();
+          // Validaciones simples de cliente
           if (!tplFile) return alert('Seleccioná un archivo .txt');
           if (!tplName) return alert('Ingresá un nombre para la plantilla');
           try {
+            // Leemos el contenido del archivo (API File)
             const userId = localStorage.getItem('userId');
             const text = await tplFile.text();
             const payload = { nameTemplate: tplName, versionTemplate: tplVersion, content: text };
+            // POST al endpoint protegido
             const res = await axios.post('http://localhost:3000/templates/upload', payload, { headers: { Authorization: userId } });
-            // actualizar lista
+            // actualizar la lista localmente para mostrar inmediatamente
             setTemplates((prev) => [res.data, ...prev]);
+            // limpiar formulario
             setTplName(''); setTplVersion('1.0'); setTplFile(null);
             alert('Plantilla subida');
           } catch (err) {
@@ -81,8 +103,11 @@ function AdminPanel() {
           <div className="field file-field">
             <label>Archivo .txt</label>
             <div className="file-control">
+              {/* Input real (oculto para diseño) */}
               <input id="tplFileInput" className="real-file-input" type="file" accept=".txt,text/plain" onChange={(e) => setTplFile(e.target.files?.[0] || null)} />
+              {/* Label estilizado que actúa como botón (click dispara el input) */}
               <label htmlFor="tplFileInput" className="file-btn btn-ghost">Seleccionar archivo</label>
+              {/* Nombre del archivo seleccionado (si hay) */}
               <span className="file-name">{tplFile?.name ? tplFile.name : 'Sin archivos seleccionados'}</span>
             </div>
           </div>
@@ -93,6 +118,7 @@ function AdminPanel() {
           </div>
         </form>
 
+        {/* Tabla de plantillas: preview y acciones */}
         <table className="templates-table" aria-label="Plantillas">
           <thead>
             <tr>
@@ -109,6 +135,7 @@ function AdminPanel() {
                 <td>{t.versionTemplate}</td>
                 <td><div className="template-content">{t.content}</div></td>
                 <td className="template-actions">
+                  {/* Ver: abre una ventana nueva con el contenido dentro de <pre> */}
                   <button className="btn btn-ghost" onClick={() => {
                     const w = window.open('', '_blank');
                     if (w) {
@@ -116,6 +143,7 @@ function AdminPanel() {
                       w.document.title = t.nameTemplate || 'Plantilla';
                     }
                   }}>Ver</button>
+                  {/* Descargar: crea un blob y activa la descarga */}
                   <button className="btn btn-ghost" onClick={() => {
                     const blob = new Blob([t.content || ''], { type: 'text/plain;charset=utf-8' });
                     const url = URL.createObjectURL(blob);
@@ -127,6 +155,7 @@ function AdminPanel() {
                     a.remove();
                     URL.revokeObjectURL(url);
                   }}>Descargar</button>
+                  {/* Borrar: confirm + llamada DELETE al backend, y actualización local */}
                   <button className="btn btn-ghost" onClick={async () => {
                       if (!window.confirm(`Confirmá que querés eliminar la plantilla "${t.nameTemplate}"`)) return;
                       try {
@@ -167,6 +196,7 @@ function AdminPanel() {
               <td>{u.email}</td>
               <td>{String(u.state === true || u.state === 'true' ? 'Activo' : 'Inactivo')}</td>
               <td>
+                {/* Activar/Desactivar usuario: confirm + PUT al backend */}
                 <button
                   onClick={async () => {
                     const id = u.id_usuario || u.id;
