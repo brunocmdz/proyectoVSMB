@@ -1,6 +1,8 @@
 import './styles/navbar.css';
 import { useEffect, useState } from 'react';
 import UserModal from './UserModal'; 
+import NotificationsModal from './NotificationsModal';
+import notificacionImg from '../assets/campana.png';
 
 function Navbar({ onRegisterClick, onLoginClick, onHomeClick, onAdminClick }) {
   const [userName, setUserName] = useState('');
@@ -8,6 +10,7 @@ function Navbar({ onRegisterClick, onLoginClick, onHomeClick, onAdminClick }) {
   const [userId, setUserId] = useState('');
   const [userEmail, setUserEmail] = useState('');
   const [mostrarModal, setMostrarModal] = useState(false);
+  const [mostrarNotificacionModal, setMostrarNotificacionModal] = useState(false);
   const [isAdmin, setIsAdmin] = useState(false);
 
   useEffect(() => {
@@ -33,6 +36,7 @@ function Navbar({ onRegisterClick, onLoginClick, onHomeClick, onAdminClick }) {
           <div id='login_btns'>
             {userName ? (
               <>
+                <button onClick={() => setMostrarNotificacionModal(true)}><img className="notificacion-img" src={notificacionImg} alt="not" /></button>
                 <span className="estado-logeado" onClick={() => setMostrarModal(true)}>
                    Hola, {userName} {lastName}
                 </span>
@@ -57,6 +61,11 @@ function Navbar({ onRegisterClick, onLoginClick, onHomeClick, onAdminClick }) {
           userId={userId}
           userEmail={userEmail}
           onClose={() => setMostrarModal(false)}
+        />
+      )}
+      {mostrarNotificacionModal && (
+        <NotificationsModal
+          onClose={() => setMostrarNotificacionModal(false)}
         />
       )}
     </div>

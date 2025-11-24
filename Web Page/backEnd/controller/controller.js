@@ -3,6 +3,15 @@ const Template = require('../model/templates');
 const Record = require('../model/record');
 const Notification = require('../model/notifications');
 
+const getNotifications = async(_req, res) => {
+    try {
+        const notifications = await Notification.findAll();
+        res.json(notifications);
+    } catch (err) {
+        console.error('Error al obtener las notificaciones:', err);
+        res.status(500).json({ message: 'Error interno del servidor', error: err.message });
+    }
+}
 const editUser = async(req, res) => {
     try {
         const {firstName, lastName,  id_usuario } = req.query;
@@ -147,5 +156,5 @@ async function login(req, res) {
     res.status(500).json({ message: "Error interno del servidor", err });
   }
 };
-module.exports = { getUser, registerUser, getUserByEmail, login, editUser, setUserState, getTemplates, uploadTemplate, deleteTemplate };
+module.exports = { getNotifications, getUser, registerUser, getUserByEmail, login, editUser, setUserState, getTemplates, uploadTemplate, deleteTemplate };
 

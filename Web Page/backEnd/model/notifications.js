@@ -16,6 +16,11 @@ const Notification = sequelize.define('Notification',
             type: DataTypes.STRING,
             allowNull: false
         },
+        checked: {
+            type: DataTypes.BOOLEAN,
+            allowNull: false,
+            defaultValue: false
+        }
     },
     {
         tableName: 'Notification',
