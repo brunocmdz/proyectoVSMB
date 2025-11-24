@@ -1,14 +1,10 @@
-import './styles/homePrivate.css';
+import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import { useEffect, useState } from 'react';
 
-function HomePrivate() {
-  // State para las plantillas y la plantilla seleccionada
+const HomePrivate = () => {
   const [templates, setTemplates] = useState([]);
   const [selectedId, setSelectedId] = useState(null);
-
-  // Plantilla seleccionada (objeto) derivado del id
-  const selectedTemplate = templates.find(t => (t.idPlantilla || t.id) === selectedId) || null;
+  const [fileData, setFileData] = useState({ name: '', content: '' });
 
   // Al montar, traer las plantillas desde el backend
   useEffect(() => {
@@ -24,6 +20,47 @@ function HomePrivate() {
     fetchTemplates();
   }, []);
 
+  const handleFileChange = (e) => {
+    const file = e.target.files[0];
+    if (file && file.type === 'text/plain') {
+      const reader = new FileReader();
+      reader.onload = () => {
+        setFileData({ name: file.name, content: reader.result });
+      };
+      reader.readAsText(file);
+    } else {
+      alert('Por favor selecciona un archivo .txt');
+    }
+  };
+
+  const uploadFile = async () => {
+    try {
+      const userId = localStorage.getItem('userId');
+      const { name, content } = fileData;
+  
+      if (!name || !content) {
+        alert('No se ha seleccionado un archivo válido.');
+        return;
+      }
+  
+      if (!selectedId) {
+        alert('Por favor selecciona una plantilla.');
+        return;
+      }
+  
+      const res = await axios.post('http://localhost:3000/fixFile', {
+        userId,
+        fileName: name,
+        fileContent: content,
+        templateId: selectedId, // Enviar el ID de la plantilla seleccionada
+      });
+  
+      alert('Archivo y plantilla enviados con éxito:', res.data);
+    } catch (err) {
+      console.error('Error al subir el archivo y la plantilla:', err);
+    }
+  };
+
   return (
     <div className="home-private-container">
       <div className="home-private-section">
@@ -36,39 +73,22 @@ function HomePrivate() {
             onChange={(e) => setSelectedId(e.target.value ? Number(e.target.value) : null)}
           >
             <option value="">-- Seleccioná una plantilla --</option>
-            {templates.map(t => (
-              <option key={t.idPlantilla || t.id} value={t.idPlantilla || t.id}>{t.nameTemplate} (v{t.versionTemplate})</option>
+            {templates.map((t) => (
+              <option key={t.idPlantilla || t.id} value={t.idPlantilla || t.id}>
+                {t.nameTemplate} (v{t.versionTemplate})
+              </option>
             ))}
           </select>
         </div>
 
-        {/* Vista previa sencilla del contenido de la plantilla seleccionada */}
-        {selectedTemplate && (
-          <div style={{ marginTop: 12 }}>
-            <strong>Preview:</strong>
-            <pre className="home-private-preview" style={{ maxHeight: 160, overflow: 'auto', background: '#0f1112', padding: 10, color: '#fff' }}>
-              {selectedTemplate.content}
-            </pre>
-          </div>
-        )}
-      </div>
-
-      <div className="home-private-section">
-        <h2>Archivo a comparar</h2>
-        <div className="home-private-drop">
-          <button className="home-private-btn">Seleccionar archivo</button>
-          <p>o arrastra tu archivo aquí</p>
+        <div className="file-upload-section">
+          <h3>Subir archivo</h3>
+          <input type="file" accept=".txt" onChange={handleFileChange} />
+          <button onClick={uploadFile}>Subir archivo</button>
         </div>
-      </div>
-
-      <div className="home-private-actions">
-        <button className="home-private-btn">Comparar</button>
-        <button className="home-private-btn">Limpiar</button>
-        <button className="home-private-btn">Descargar</button>
-        <button className="home-private-btn">Guardar</button>
       </div>
     </div>
   );
-}
+};
 
 export default HomePrivate;
