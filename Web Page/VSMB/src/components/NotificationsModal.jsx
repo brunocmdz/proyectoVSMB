@@ -30,14 +30,12 @@ function NotificationsModal({ onClose }) {
   }, []);
 
   return (
-    <div className="notifications-modal">
-      <div className="notifications-header">
-        <h3>Notificaciones</h3>
-        <div className="notifications-actions">
-          <button className="btn" onClick={fetchNotifications}>Refrescar</button>
-          {onClose && <button className="btn" onClick={onClose}>Cerrar</button>}
+    <div className="notifications-modal-overlay" onClick={onClose}>
+      <div className="notifications-modal-content" onClick={(e) => e.stopPropagation()}>
+        <div className="notifications-header">
+          <h3>Notificaciones</h3>
+          <button className="close-btn" onClick={onClose}>×</button>
         </div>
-      </div>
 
       {loading && <p>Cargando...</p>}
       {error && <p className="error">{error}</p>}
@@ -72,6 +70,11 @@ function NotificationsModal({ onClose }) {
           </table>
         </div>
       )}
+
+        <div className="notifications-footer">
+          <button className="btn-refresh" onClick={fetchNotifications}>Refrescar</button>
+        </div>
+      </div>
     </div>
   );
 }
