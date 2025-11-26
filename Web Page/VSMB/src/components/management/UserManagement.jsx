@@ -1,12 +1,14 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import '../styles/AdminPanel.css';
+import NotificationInputModal from '../NotificationInputModal';
 
 /*
   UserManagement
   - Encapsula la lógica de administración de usuarios:
     * Listado de usuarios desde el backend
     * Acción para activar / desactivar usuarios
+    * Enviar notificaciones a usuarios específicos
   - Comentarios: las llamadas usan el mismo header `Authorization` guardado en localStorage.
 */
 function UserManagement() {
@@ -14,6 +16,10 @@ function UserManagement() {
   const [users, setUsers] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
+
+  // Estado para el modal de notificaciones
+  const [showNotificationModal, setShowNotificationModal] = useState(false);
+  const [selectedUser, setSelectedUser] = useState(null);
 
   // Efecto: obtener usuarios al montar el componente
   useEffect(() => {
@@ -57,6 +63,27 @@ function UserManagement() {
     }
   };
 
+  // handleSendNotification: envía una notificación a un usuario
+  // - recibe { userId, title, message } del modal
+  // - hace POST /notifications para guardar la notificación
+  // - cierra el modal después de enviar
+  const handleSendNotification = async ({ userId, title, message }) => {
+    try {
+      const token = localStorage.getItem('userId');
+      await axios.post(
+        'http://localhost:3000/notifications',
+        { userId, title, message },
+        { headers: { Authorization: token } }
+      );
+      alert('Notificación enviada correctamente');
+      setShowNotificationModal(false);
+      setSelectedUser(null);
+    } catch (err) {
+      console.error('Error al enviar notificación:', err);
+      alert('Error al enviar notificación');
+    }
+  };
+
   if (loading) return <div>Cargando usuarios...</div>;
   if (error) return <div>{error}</div>;
 
@@ -86,7 +113,10 @@ function UserManagement() {
                 <button onClick={() => toggleState(u)}>
                   {u.state === true || u.state === 'true' ? 'Desactivar' : 'Activar'}
                 </button>
-                <button>
+                <button onClick={() => {
+                  setSelectedUser(u);
+                  setShowNotificationModal(true);
+                }}>
                   Notificar
                 </button>
               </td>
@@ -94,6 +124,18 @@ function UserManagement() {
           ))}
         </tbody>
       </table>
+
+      {showNotificationModal && selectedUser && (
+        <NotificationInputModal
+          userId={selectedUser.id_usuario || selectedUser.id}
+          userName={`${selectedUser.firstName} ${selectedUser.lastName}`}
+          onClose={() => {
+            setShowNotificationModal(false);
+            setSelectedUser(null);
+          }}
+          onSend={handleSendNotification}
+        />
+      )}
     </div>
   );
 }

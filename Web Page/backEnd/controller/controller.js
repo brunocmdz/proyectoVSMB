@@ -6,6 +6,32 @@ const fs = require('fs');
 const path = require('path');
 const { Op } = require('sequelize');
 
+const notification = async (req, res) => {
+    try {
+        const { userId, title, message } = req.body;
+        
+        // Validar campos requeridos
+        if (!title || !message) {
+            return res.status(400).json({ message: 'Título y mensaje son requeridos' });
+        }
+        
+        const newNotification = await Notification.create({
+            title,
+            message,
+            idUsuario: userId || null,
+            allUsers: userId ? false : true,
+            checked: false
+        });
+        
+        res.status(201).json({ 
+            message: 'Notificación creada exitosamente',
+            notification: newNotification 
+        });
+    } catch (err) {
+        console.error('Error al crear la notificación:', err);
+        res.status(500).json({ message: 'Error interno del servidor', error: err.message });
+    }
+};
 const getNotifications = async(_req, res) => {
     try {
         const notifications = await Notification.findAll();
@@ -214,5 +240,5 @@ async function login(req, res) {
     res.status(500).json({ message: "Error interno del servidor", err });
   }
 };
-module.exports = { getNotifications, getUser, registerUser, getUserByEmail, login, editUser, setUserState, getTemplates, uploadTemplate, deleteTemplate, fixFile };
+module.exports = { notification, getNotifications, getUser, registerUser, getUserByEmail, login, editUser, setUserState, getTemplates, uploadTemplate, deleteTemplate, fixFile };
 

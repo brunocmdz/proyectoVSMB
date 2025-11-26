@@ -7,7 +7,7 @@ const express = require('express');
 const app = express();
 const port = 3000;
 const sequelize = require('./config/database');
-const { getNotifications, editUser, getUser, registerUser, getUserByEmail, login, setUserState, getTemplates, uploadTemplate, deleteTemplate, fixFile } = require('./controller/controller');
+const { notification, getNotifications, editUser, getUser, registerUser, getUserByEmail, login, setUserState, getTemplates, uploadTemplate, deleteTemplate, fixFile } = require('./controller/controller');
 const { isAuth, isAdmin } = require('./midlewares/auth');
 
 app.use(express.json());
@@ -23,13 +23,16 @@ app.use((req, res, next) => {
   next()
 })
 
+
 app.get('/users', isAuth, isAdmin, getUser);
 app.get('/users/:email', getUserByEmail);
 app.post('/users/regist/',registerUser);
 app.post('/users/login/', login);
 app.post('/users/editUser/', editUser);
 app.put('/users/state', isAuth, isAdmin, setUserState);
+
 app.get('/notifications', isAuth, getNotifications);
+app.post('/notifications', isAuth, isAdmin, notification);
 
 // Plantillas
 app.get('/templates', isAuth, isAdmin, getTemplates);

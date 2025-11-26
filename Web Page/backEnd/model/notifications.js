@@ -20,6 +20,15 @@ const Notification = sequelize.define('Notification',
             type: DataTypes.BOOLEAN,
             allowNull: false,
             defaultValue: false
+        },
+        idUsuario: {
+            type: DataTypes.INTEGER,
+            allowNull: false
+        },
+        allUsers: {
+            type: DataTypes.BOOLEAN,
+            allowNull: false,
+            defaultValue: false
         }
     },
     {
