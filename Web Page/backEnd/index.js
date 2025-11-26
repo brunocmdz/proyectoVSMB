@@ -40,6 +40,7 @@ app.delete('/templates/:id', isAuth, isAdmin, deleteTemplate);
 app.post('/fixFile', fixFile)
 
 app.listen(port, async() => {
+    await sequelize.authenticate();
     await sequelize.sync({force: false});
     console.log(`El servidor esta corriendo en el puerto ${port}`);
 });
