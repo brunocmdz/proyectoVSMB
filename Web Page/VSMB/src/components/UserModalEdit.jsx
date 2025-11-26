@@ -2,7 +2,7 @@ import './styles/UserModal.css';
 import { useState, useEffect} from 'react';
 import axios from 'axios';
 
-function UserModalEdit({userName, userLastName }) {
+function UserModalEdit({userName, userLastName, onClose}) {
     const [firstName, setFirstName] = useState(''); 
     const [lastName, setLastName] = useState(''); 
     useEffect(() => {
@@ -28,11 +28,12 @@ function UserModalEdit({userName, userLastName }) {
 
   return (
     <div className="modal-overlay">
-      <div className="modal-content">
+      <div className="modal-content" >
         <h2>Editar usuario</h2>
         <p>Nombre: <input onChange={(e) => setFirstName(e.target.value)} value={firstName} /></p>
         <p>Apellido: <input onChange={(e) => setLastName(e.target.value)} value={lastName} /></p>
         <button className="btn-guardar" onClick={editarDatos}>Guardar</button>
+        <button style={{backgroundColor: 'red'}} onClick={onClose}>Cancelar</button>
       </div>
     </div>
   );

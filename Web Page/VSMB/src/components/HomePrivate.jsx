@@ -129,7 +129,7 @@ const HomePrivate = () => {
 
       {/* Nueva sección con tabla de records */}
       <div className="home-private-section">
-        <h2>Historial de Archivos</h2>
+        <h2>Historial de Archivos Corregidos</h2>
         <div className="records-table-wrapper">
           <table className="records-table">
             <thead>

@@ -33,6 +33,7 @@ function UserModal({ userName, userLastName, userEmail, onClose }) {
           userName={userName}
           userLastName={userLastName}
           userEmail={userEmail}
+          onClose={() => setModo("ver")}
         />
       )}
     </>
