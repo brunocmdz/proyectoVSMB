@@ -111,30 +111,12 @@ function TemplateManagement() {
           </thead>
           <tbody>
             {templates.map((t) => (
-              <tr key={t.idPlantilla || t.id}>
+              <tr key={t.idPlantilla}>
                 <td>{t.nameTemplate}</td>
                 <td>{t.versionTemplate}</td>
                 <td><div className="template-content">{t.content}</div></td>
                 <td className="template-actions">
-                  <button className="btn btn-ghost" onClick={() => {
-                    const w = window.open('', '_blank');
-                    if (w) {
-                      w.document.write('<pre>' + (t.content || '').replace(/</g, '&lt;') + '</pre>');
-                      w.document.title = t.nameTemplate || 'Plantilla';
-                    }
-                  }}>Ver</button>
-                  <button className="btn btn-ghost" onClick={() => {
-                    const blob = new Blob([t.content || ''], { type: 'text/plain;charset=utf-8' });
-                    const url = URL.createObjectURL(blob);
-                    const a = document.createElement('a');
-                    a.href = url;
-                    a.download = (t.nameTemplate || 'plantilla') + '.txt';
-                    document.body.appendChild(a);
-                    a.click();
-                    a.remove();
-                    URL.revokeObjectURL(url);
-                  }}>Descargar</button>
-                  <button className="btn btn-ghost" onClick={() => handleDelete(t.idPlantilla || t.id)}>Borrar</button>
+                  <button className="btn btn-ghost" onClick={() => handleDelete(t.idPlantilla)}>Borrar</button>
                 </td>
               </tr>
             ))}

@@ -44,7 +44,7 @@ app.post('/fixFile', fixFile)
 
 app.listen(port, async() => {
     await sequelize.authenticate();
-    await sequelize.sync({force: false});
+    await sequelize.sync({alter: true});
     console.log(`El servidor esta corriendo en el puerto ${port}`);
 });
 

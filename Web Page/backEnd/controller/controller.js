@@ -2,8 +2,6 @@ const User = require('../model/user');
 const Template = require('../model/templates');
 const Record = require('../model/record');
 const Notification = require('../model/notifications');
-const fs = require('fs');
-const path = require('path');
 const { Op } = require('sequelize');
 const bcrypt = require('bcrypt');
 
@@ -20,8 +18,7 @@ const notification = async (req, res) => {
             title,
             message,
             idUsuario: userId || null,
-            allUsers: userId ? false : true,
-            checked: false
+            allUsers: userId ? false : true
         });
         
         res.status(201).json({ 
@@ -33,9 +30,19 @@ const notification = async (req, res) => {
         res.status(500).json({ message: 'Error interno del servidor', error: err.message });
     }
 };
-const getNotifications = async(_req, res) => {
+const getNotifications = async(req, res) => {
     try {
-        const notifications = await Notification.findAll();
+        const userId = req.headers.authorization;
+        
+        // Traer notificaciones del usuario actual o notificaciones para todos
+        const notifications = await Notification.findAll({
+            where: {
+                [Op.or]: [
+                    { idUsuario: userId },
+                    { allUsers: true }
+                ]
+            }
+        });
         res.json(notifications);
     } catch (err) {
         console.error('Error al obtener las notificaciones:', err);
@@ -78,59 +85,8 @@ const getUserByEmail = async(req, res) => {
 };
 
 const fixFile = async (req, res) => {
-    const { userId, fileName, fileContent, templateId } = req.body;
 
-    // Validar los datos recibidos
-    if (!userId || !fileName || !fileContent || !templateId) {
-        return res.status(400).json({ error: 'Faltan datos requeridos (userId, fileName, fileContent, templateId).' });
-    }
-
-    try {
-        // --- PROCESAR EL ARCHIVO ---
-        const lines = fileContent.split('\n'); // Dividir el contenido en líneas
-        const fixedLines = lines.map(line => ArreglarFormatoLinea(line)); // Corregir cada línea
-        const fixedContent = fixedLines.join('\n'); // Unir las líneas corregidas
-
-        // --- GUARDAR EL ARCHIVO CORREGIDO EN LA BASE DE DATOS ---
-        await Record.create({
-            userId,
-            templateId,
-            fileName,
-            content: fixedContent, // Guardar el contenido corregido
-        });
-
-        // --- GUARDAR EL ARCHIVO CORREGIDO EN EL SISTEMA DE ARCHIVOS ---
-        const userDir = path.join(__dirname, '../uploads', userId.toString());
-        if (!fs.existsSync(userDir)) {
-            fs.mkdirSync(userDir, { recursive: true });
-        }
-        const filePath = path.join(userDir, `fixed_${fileName}`);
-        fs.writeFileSync(filePath, fixedContent, 'utf8');
-
-        // --- RESPONDER CON EL ARCHIVO CORREGIDO ---
-        res.status(200).json({
-            message: 'Archivo procesado y guardado con éxito.',
-            correctedFile: fixedContent,
-            filePath,
-        });
-    } catch (err) {
-        console.error('Error al procesar el archivo:', err);
-        res.status(500).json({ error: 'Error interno del servidor.' });
-    }
 };
-
-// --- LÓGICA DE ARREGLAR FORMATO DE LÍNEA ---
-function ArreglarFormatoLinea(linea) {
-    if (stringIsNullOrWhiteSpace(linea)) return linea;
-
-    // Aquí puedes pegar la lógica completa de la función `ArreglarFormatoLinea` que compartiste.
-    // Por simplicidad, la omito aquí, pero asegúrate de incluirla en tu archivo.
-    return linea; // Reemplaza esto con la lógica completa.
-}
-
-function stringIsNullOrWhiteSpace(str) {
-    return !str || /^\s*$/.test(str);
-}
 
 const getTemplates = async(_req, res) => {
     try {
@@ -144,9 +100,8 @@ const getTemplates = async(_req, res) => {
 
 const uploadTemplate = async (req, res) => {
     try {
-        // multer memory storage proporciona req.file
         const { nameTemplate, versionTemplate, content } = req.body || {};
-        // Accept either JSON `content` or multipart file (if multer used).
+
         let finalContent = content;
         if (!finalContent && req.file && req.file.buffer) {
             finalContent = req.file.buffer.toString('utf8');
@@ -155,6 +110,14 @@ const uploadTemplate = async (req, res) => {
             return res.status(400).json({ message: 'Falta contenido de la plantilla (campo content) o archivo .txt' });
         }
         const tpl = await Template.create({ content: finalContent, versionTemplate, nameTemplate });
+        
+        // Crear notificación para todos los usuarios
+        await Notification.create({
+            title: 'Nueva plantilla',
+            message: `Se ha subido una nueva plantilla: ${nameTemplate || 'Sin nombre'}`,
+            allUsers: true
+        });
+        
         res.json(tpl);
     } catch (err) {
         console.error('Error subiendo la plantilla:', err);
@@ -166,8 +129,20 @@ const deleteTemplate = async (req, res) => {
     try {
         const id = req.params.id;
         if (!id) return res.status(400).json({ message: 'Falta id de plantilla' });
+        
+        // Obtener info de la plantilla antes de borrarla
+        const template = await Template.findOne({ where: { idPlantilla: id } });
+        
         const deleted = await Template.destroy({ where: { idPlantilla: id } });
         if (deleted === 0) return res.status(404).json({ message: 'Plantilla no encontrada' });
+        
+        // Crear notificación para todos los usuarios
+        await Notification.create({
+            title: 'Plantilla eliminada',
+            message: `Se ha eliminado la plantilla: ${template?.nameTemplate || 'ID ' + id}`,
+            allUsers: true
+        });
+        
         res.json({ message: 'Plantilla eliminada', id });
     } catch (err) {
         console.error('Error eliminando plantilla:', err);
@@ -177,11 +152,11 @@ const deleteTemplate = async (req, res) => {
 const setUserState = async (req, res) => {
     try {
         const { id, state } = req.query;
-        if (typeof id === 'undefined') {
+        if (!id) {
             return res.status(400).json({ message: 'Falta id del usuario' });
         }
         // convertir state a boolean (acepta 'true'/'false', '1'/'0', boolean)
-        const newState = (state === 'true' || state === '1' || state === true);
+        const newState = (state === true);
 
         const [updated] = await User.update(
             { state: newState },
@@ -232,6 +207,7 @@ async function login(req, res) {
       return res.status(401).json({ message: "Credenciales inválidas" });
     }
 
+<<<<<<< HEAD
     // Comparar contraseña encriptada
     const isMatch = await bcrypt.compare(password, user.password);
 
@@ -243,6 +219,12 @@ async function login(req, res) {
     if (user.state === false || user.state === 'false' || user.state === 0) {
         return res.status(403).json({ message: 'Usuario desactivado' });
     }
+=======
+        // impedir login si el usuario está desactivado
+        if (user.state === false) {
+            return res.status(403).json({ message: 'Usuario desactivado' });
+        }
+>>>>>>> 044c82aa6d222c77ac3cae29beb8caef741134b7
 
     res.json({
       id: user.id_usuario,
