@@ -86,9 +86,10 @@ const getUserByEmail = async(req, res) => {
 
 const fixFile = async (req, res) => {
     try {
+        // Extraer los datos del cuerpo de la petición
         const { userId, fileName, fileContent, templateId } = req.body;
 
-        // Validar campos requeridos
+        // Validar que todos los campos requeridos estén presentes
         if (!userId || !fileName || !fileContent || !templateId) {
             return res.status(400).json({ 
                 message: 'Faltan campos requeridos: userId, fileName, fileContent, templateId',
@@ -96,20 +97,60 @@ const fixFile = async (req, res) => {
             });
         }
 
-        // Obtener la plantilla seleccionada
+        // Buscar la plantilla seleccionada en la base de datos
         const template = await Template.findOne({ where: { idPlantilla: templateId } });
         if (!template) {
             return res.status(404).json({ message: 'Plantilla no encontrada' });
         }
 
-        // Aquí podés procesar el archivo con la plantilla si necesitás
-        // Por ahora solo guardamos el contenido original del archivo
+        // Obtener el contenido de la plantilla
+        const templateContent = template.content;
+        
+        // Extraer las palabras fijas del template (sin las 'x') para identificar qué palabras ignorar
+        // Ejemplo: si template = "tipo°°de°°xxxx", palabras = ['tipo', 'de']
+        const templateWords = templateContent
+            .replace(/x+/gi, '') // Eliminar todas las secuencias de 'x' (mayúsculas o minúsculas)
+            .replace(/[°\/\_<>=]/g, ' ') // Reemplazar separadores especiales por espacios
+            .split(/\s+/) // Dividir por espacios en blanco
+            .filter(w => w.trim().length > 0) // Filtrar palabras vacías
+            .map(w => w.toLowerCase()); // Convertir a minúsculas para comparación
+        
+        // Extraer todas las palabras del archivo subido por el usuario
+        const fileWords = fileContent
+            .replace(/[°\/\_<>=]/g, ' ') // Reemplazar separadores por espacios
+            .split(/\s+/) // Dividir por espacios
+            .filter(w => w.trim().length > 0); // Filtrar palabras vacías
+        
+        // Filtrar solo las palabras nuevas (valores) que NO están en el template
+        // Estas son las palabras que reemplazarán las 'x' del template
+        const newValues = fileWords.filter(word => 
+            !templateWords.includes(word.toLowerCase())
+        );
+        
+        // Inicializar el resultado con el contenido del template
+        let result = templateContent;
+        let valueIndex = 0; // Índice para recorrer los valores nuevos
+
+        // Reemplazar cada secuencia de 'x' con el siguiente valor nuevo
+        // Regex /x+/gi busca una o más 'x' consecutivas (mayúsculas o minúsculas)
+        result = result.replace(/x+/gi, (match) => {
+            if (valueIndex < newValues.length) {
+                // Tomar el siguiente valor y avanzar el índice
+                const value = newValues[valueIndex];
+                valueIndex++;
+                return value;
+            }
+            return match; // Si no hay más valores, dejar las 'x' como están
+        });
+
+        // Guardar el resultado procesado en la tabla Record
         const record = await Record.create({
             name: fileName,
-            content: fileContent,
+            content: result, // Guardar el template con las 'x' reemplazadas
             userId: userId
         });
 
+        // Responder con éxito
         res.status(201).json({ 
             message: 'Archivo procesado exitosamente',
             record: record,
@@ -240,7 +281,6 @@ async function login(req, res) {
       return res.status(401).json({ message: "Credenciales inválidas" });
     }
 
-<<<<<<< HEAD
     // Comparar contraseña encriptada
     const isMatch = await bcrypt.compare(password, user.password);
 
@@ -252,12 +292,10 @@ async function login(req, res) {
     if (user.state === false || user.state === 'false' || user.state === 0) {
         return res.status(403).json({ message: 'Usuario desactivado' });
     }
-=======
-        // impedir login si el usuario está desactivado
-        if (user.state === false) {
+    // impedir login si el usuario está desactivado
+    if (user.state === false) {
             return res.status(403).json({ message: 'Usuario desactivado' });
-        }
->>>>>>> 044c82aa6d222c77ac3cae29beb8caef741134b7
+    }
 
     res.json({
       id: user.id_usuario,
