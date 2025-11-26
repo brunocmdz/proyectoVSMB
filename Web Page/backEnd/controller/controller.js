@@ -5,6 +5,7 @@ const Notification = require('../model/notifications');
 const fs = require('fs');
 const path = require('path');
 const { Op } = require('sequelize');
+const bcrypt = require('bcrypt');
 
 const notification = async (req, res) => {
     try {
@@ -201,14 +202,20 @@ const setUserState = async (req, res) => {
 async function registerUser(req, res) {
     try {
         const { email, password, firstName, lastName } = req.query;
+
+        // Encriptar la contraseña antes de guardar
+        const hashedPassword = await bcrypt.hash(password, 10);
+
         const users = await User.create({
             email,
-            password,
+            password: hashedPassword,  // ← ya encriptada
             firstName,
-                        lastName,
-                        state: true
+            lastName,
+            state: true
         });
+
         res.json(users);
+
     } catch (err) {
         console.error('Error al obtener los usuarios:', err);
         res.status(500).json({ message: 'Error interno del servidor', error: err.message });
@@ -217,24 +224,34 @@ async function registerUser(req, res) {
 async function login(req, res) {
   try {
     const { email, password } = req.query;
-    const user = await User.findOne({ where: { email, password } });
+
+    // Buscar usuario solo por email
+    const user = await User.findOne({ where: { email } });
 
     if (!user) {
       return res.status(401).json({ message: "Credenciales inválidas" });
     }
 
-        // impedir login si el usuario está desactivado
-        if (user.state === false || user.state === 'false' || user.state === 0) {
-            return res.status(403).json({ message: 'Usuario desactivado' });
-        }
+    // Comparar contraseña encriptada
+    const isMatch = await bcrypt.compare(password, user.password);
+
+    if (!isMatch) {
+      return res.status(401).json({ message: "Credenciales inválidas" });
+    }
+
+    // impedir login si el usuario está desactivado
+    if (user.state === false || user.state === 'false' || user.state === 0) {
+        return res.status(403).json({ message: 'Usuario desactivado' });
+    }
 
     res.json({
-                id: user.id_usuario,
-                firstName: user.firstName,
-                lastName: user.lastName,
-                email: user.email,
-                isAdmin: user.isAdmin
+      id: user.id_usuario,
+      firstName: user.firstName,
+      lastName: user.lastName,
+      email: user.email,
+      isAdmin: user.isAdmin
     });
+
   } catch (err) {
     console.error("Error al obtener los usuarios:", err);
     res.status(500).json({ message: "Error interno del servidor", err });
