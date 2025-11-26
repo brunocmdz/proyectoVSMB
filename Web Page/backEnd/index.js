@@ -7,7 +7,7 @@ const express = require('express');
 const app = express();
 const port = 3000;
 const sequelize = require('./config/database');
-const { notification, getNotifications, editUser, getUser, registerUser, getUserByEmail, login, setUserState, getTemplates, uploadTemplate, deleteTemplate, fixFile } = require('./controller/controller');
+const { notification, getNotifications, editUser, getUser, registerUser, getUserByEmail, login, setUserState, getTemplates, uploadTemplate, deleteTemplate, fixFile, getRecords } = require('./controller/controller');
 const { isAuth, isAdmin } = require('./midlewares/auth');
 
 app.use(express.json());
@@ -41,6 +41,7 @@ app.post('/templates/upload', isAuth, isAdmin, uploadTemplate);
 app.delete('/templates/:id', isAuth, isAdmin, deleteTemplate);
 
 app.post('/fixFile', fixFile)
+app.get('/records', isAuth, getRecords);
 
 app.listen(port, async() => {
     await sequelize.authenticate();

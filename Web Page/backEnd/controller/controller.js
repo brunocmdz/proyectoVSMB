@@ -84,7 +84,40 @@ const getUserByEmail = async(req, res) => {
 };
 
 const fixFile = async (req, res) => {
+    try {
+        const { userId, fileName, fileContent, templateId } = req.body;
 
+        // Validar campos requeridos
+        if (!userId || !fileName || !fileContent || !templateId) {
+            return res.status(400).json({ 
+                message: 'Faltan campos requeridos: userId, fileName, fileContent, templateId',
+                received: { userId: !!userId, fileName: !!fileName, fileContent: !!fileContent, templateId: !!templateId }
+            });
+        }
+
+        // Obtener la plantilla seleccionada
+        const template = await Template.findOne({ where: { idPlantilla: templateId } });
+        if (!template) {
+            return res.status(404).json({ message: 'Plantilla no encontrada' });
+        }
+
+        // Aquí podés procesar el archivo con la plantilla si necesitás
+        // Por ahora solo guardamos el contenido original del archivo
+        const record = await Record.create({
+            name: fileName,
+            content: fileContent,
+            userId: userId
+        });
+
+        res.status(201).json({ 
+            message: 'Archivo procesado exitosamente',
+            record: record,
+            templateUsed: template.nameTemplate
+        });
+    } catch (err) {
+        console.error('Error al procesar archivo:', err);
+        res.status(500).json({ message: 'Error interno del servidor', error: err.message });
+    }
 };
 
 const getTemplates = async(_req, res) => {
@@ -215,5 +248,26 @@ async function login(req, res) {
     res.status(500).json({ message: "Error interno del servidor", err });
   }
 };
-module.exports = { notification, getNotifications, getUser, registerUser, getUserByEmail, login, editUser, setUserState, getTemplates, uploadTemplate, deleteTemplate, fixFile };
+
+const getRecords = async (req, res) => {
+    try {
+        const userId = req.headers.authorization;
+        
+        if (!userId) {
+            return res.status(401).json({ message: 'No autorizado' });
+        }
+
+        const records = await Record.findAll({
+            where: { userId },
+            order: [['createdAt', 'DESC']]
+        });
+        
+        res.json(records);
+    } catch (err) {
+        console.error('Error al obtener records:', err);
+        res.status(500).json({ message: 'Error interno del servidor', error: err.message });
+    }
+};
+
+module.exports = { notification, getNotifications, getUser, registerUser, getUserByEmail, login, editUser, setUserState, getTemplates, uploadTemplate, deleteTemplate, fixFile, getRecords };
 
