@@ -2,8 +2,6 @@ const User = require('../model/user');
 const Template = require('../model/templates');
 const Record = require('../model/record');
 const Notification = require('../model/notifications');
-const fs = require('fs');
-const path = require('path');
 const { Op } = require('sequelize');
 
 const notification = async (req, res) => {
@@ -19,8 +17,7 @@ const notification = async (req, res) => {
             title,
             message,
             idUsuario: userId || null,
-            allUsers: userId ? false : true,
-            checked: false
+            allUsers: userId ? false : true
         });
         
         res.status(201).json({ 
@@ -39,7 +36,10 @@ const getNotifications = async(req, res) => {
         // Traer notificaciones del usuario actual o notificaciones para todos
         const notifications = await Notification.findAll({
             where: {
-                idUsuario: userId
+                [Op.or]: [
+                    { idUsuario: userId },
+                    { allUsers: true }
+                ]
             }
         });
         res.json(notifications);
@@ -99,9 +99,8 @@ const getTemplates = async(_req, res) => {
 
 const uploadTemplate = async (req, res) => {
     try {
-        // multer memory storage proporciona req.file
         const { nameTemplate, versionTemplate, content } = req.body || {};
-        // Accept either JSON `content` or multipart file (if multer used).
+
         let finalContent = content;
         if (!finalContent && req.file && req.file.buffer) {
             finalContent = req.file.buffer.toString('utf8');
@@ -110,6 +109,14 @@ const uploadTemplate = async (req, res) => {
             return res.status(400).json({ message: 'Falta contenido de la plantilla (campo content) o archivo .txt' });
         }
         const tpl = await Template.create({ content: finalContent, versionTemplate, nameTemplate });
+        
+        // Crear notificación para todos los usuarios
+        await Notification.create({
+            title: 'Nueva plantilla',
+            message: `Se ha subido una nueva plantilla: ${nameTemplate || 'Sin nombre'}`,
+            allUsers: true
+        });
+        
         res.json(tpl);
     } catch (err) {
         console.error('Error subiendo la plantilla:', err);
@@ -121,8 +128,20 @@ const deleteTemplate = async (req, res) => {
     try {
         const id = req.params.id;
         if (!id) return res.status(400).json({ message: 'Falta id de plantilla' });
+        
+        // Obtener info de la plantilla antes de borrarla
+        const template = await Template.findOne({ where: { idPlantilla: id } });
+        
         const deleted = await Template.destroy({ where: { idPlantilla: id } });
         if (deleted === 0) return res.status(404).json({ message: 'Plantilla no encontrada' });
+        
+        // Crear notificación para todos los usuarios
+        await Notification.create({
+            title: 'Plantilla eliminada',
+            message: `Se ha eliminado la plantilla: ${template?.nameTemplate || 'ID ' + id}`,
+            allUsers: true
+        });
+        
         res.json({ message: 'Plantilla eliminada', id });
     } catch (err) {
         console.error('Error eliminando plantilla:', err);

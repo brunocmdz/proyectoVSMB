@@ -48,7 +48,6 @@ function NotificationsModal({ onClose }) {
                 <th>ID</th>
                 <th>Título</th>
                 <th>Mensaje</th>
-                <th>Estado</th>
                 <th>Fecha</th>
               </tr>
             </thead>
@@ -61,7 +60,6 @@ function NotificationsModal({ onClose }) {
                     <td>{n.id_notification || n.id}</td>
                     <td>{n.title}</td>
                     <td style={{ maxWidth: 420, whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>{n.message}</td>
-                    <td>{n.checked ? 'Leído' : 'No leído'}</td>
                     <td>{n.createdAt ? new Date(n.createdAt).toLocaleString() : ''}</td>
                   </tr>
                 ))
